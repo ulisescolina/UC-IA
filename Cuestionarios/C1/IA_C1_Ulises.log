@@ -1,0 +1,195 @@
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/Debian) (preloaded format=xelatex 2018.5.30)  6 SEP 2018 02:42
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**IA_C1_Ulises.tex
+(./IA_C1_Ulises.tex
+LaTeX2e <2017-04-15>
+Babel <3.18> and hyphenation patterns for 3 language(s) loaded.
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: xetex.def on input line 99.
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/xetex.def
+File: xetex.def 2017/06/24 v5.0h Graphics/color driver for xetex
+))
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+)
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2016/05/22 v1.7-166 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 67.
+\captionmargin=\dimen105
+\captionmargin@=\dimen106
+\captionwidth=\dimen107
+\caption@tempdima=\dimen108
+\caption@indent=\dimen109
+\caption@parindent=\dimen110
+\caption@hangindent=\dimen111
+)
+\c@ContinuedFloat=\count87
+)
+(/usr/share/texlive/texmf-dist/tex/latex/caption/subcaption.sty
+Package: subcaption 2016/05/22 v1.1-161 Sub-captions (AR)
+\c@subfigure=\count88
+\c@subtable=\count89
+)
+(/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count90
+\float@exts=\toks15
+\float@box=\box26
+\@float@everytoks=\toks16
+\@floatcapt=\box27
+) (./IA_C1_Ulises.aux)
+\openout1 = `IA_C1_Ulises.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: float package is loaded.
+Package caption Info: End \AtBeginDocument code.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 14.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 14.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 14.
+
+[1
+
+] (./IA_C1_Ulises.toc
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 2.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 2.
+)
+\tf@toc=\write3
+\openout3 = `IA_C1_Ulises.toc'.
+
+ [2]
+Overfull \hbox (1.12874pt too wide) in paragraph at lines 20--21
+\TU/lmr/m/sc/10 Consigna\TU/lmr/m/it/10 : \TU/lmr/bx/it/10 Describa el test de 
+turing. Fundamentos, Objetivos, Modal-
+ []
+
+[3]
+Underfull \hbox (badness 10000) in paragraph at lines 59--60
+
+ []
+
+[4] [5]
+File: ../../IMG/TT2018.png Graphic file (type bmp)
+<../../IMG/TT2018.png>
+File: ../../IMG/TT2017.png Graphic file (type bmp)
+<../../IMG/TT2017.png>
+ [6]
+File: ../../IMG/TT2016.png Graphic file (type bmp)
+<../../IMG/TT2016.png>
+File: ../../IMG/TT2015.png Graphic file (type bmp)
+<../../IMG/TT2015.png>
+File: ../../IMG/TT2014.png Graphic file (type bmp)
+<../../IMG/TT2014.png>
+
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.150 \newpage
+              
+? 
+[7] [8]
+Underfull \hbox (badness 1275) in paragraph at lines 158--160
+\TU/lmr/m/it/10 dogma\TU/lmr/m/n/10 . Katholieke Universiteit Leuven, 2007, \TU
+/lmr/m/sc/10 doi: 10.4067/S0718-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 160--162
+[]\TU/lmr/m/sc/10 The Society for the Study of Artificial Intelli-
+ []
+
+
+Underfull \hbox (badness 5533) in paragraph at lines 160--162
+\TU/lmr/m/sc/10 gence and Simulation of Behaviour\TU/lmr/m/n/10 . \TU/lmr/m/it/
+10 Loebner Prize\TU/lmr/m/n/10 . AISB.
+ []
+
+
+Underfull \hbox (badness 2547) in paragraph at lines 162--164
+[]\TU/lmr/m/sc/10 Varios autores\TU/lmr/m/n/10 . \TU/lmr/m/it/10 El test de Tur
+ing en su máxima com-
+ []
+
+
+Underfull \hbox (badness 3312) in paragraph at lines 162--164
+\TU/lmr/m/it/10 petición: Loebner Prize\TU/lmr/m/n/10 . System and Software Eng
+ineering, 2004.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 162--164
+\TU/lmr/m/n/10 http://www.gtd.es/es/blog/el-test-de-turing-en-su-maxima-competi
+cion-
+ []
+
+[9] (./IA_C1_Ulises.aux) ) 
+Here is how much of TeX's memory you used:
+ 1861 strings out of 494988
+ 29865 string characters out of 6178638
+ 98394 words of memory out of 5000000
+ 5713 multiletter control sequences out of 15000+600000
+ 6472 words of font info for 35 fonts, out of 8000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 36i,7n,39p,914b,339s stack positions out of 5000i,500n,10000p,200000b,80000s
+
+Output written on IA_C1_Ulises.pdf (9 pages).
