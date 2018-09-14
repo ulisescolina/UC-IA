@@ -1,0 +1,85 @@
+\documentclass{article}
+\renewcommand\refname{Referencias}
+\renewcommand\contentsname{\'Indice de Conten\'ido}
+\usepackage{graphicx}
+\graphicspath{{../../IMG}}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{float}
+
+\title{\textsc{Cuestionario N\'umero 2\\Inteligencia Artificial}}
+\author{Ulises C. Ramirez}
+\date{8 de Septiembre, 2018}
+
+\begin{document}
+\maketitle
+\pagenumbering{gobble}
+\newpage
+\tableofcontents
+\pagenumbering{gobble}
+\newpage
+
+% === Inicio del Cuerpo del Documento === %
+\pagenumbering{arabic}
+\section*{Directivas adicionales de la c\'atedra}
+Leer el material disponible en el aula virtual y el capitulo 2 - Agentes Inteligentes pagina 37 a 64 del libro de Russell y Norvig.
+
+\section{Capacidades de los Agentes}
+\label{sec:capacidadesagentes}
+\textsc{Consigna}: \textbf{un agente inteligente es caracterizado por tres capacidades: Agencia, Inteligencia y Movilidad. Explique brevemente a que se refiere cada una.}\\
+
+El concepto de \textit{agencia} determina cu\'an aut\'onomo es el agente, la autonomia en este caso, viene s significar \textit{cuanto de lo que el agente hace, lo hace porque fueron ordenes, y cuanto de lo que hace, lo hace porque aprendi\'o}, cuanto mas se base en su programaci\'on para realizar una tarea se dice que el agente tiene falta de autonom\'ia.\\
+\textit{Inteligencia} es la habilidad del agente de aplicar el conocimiento espec\'ifico adem\'as de los proceso para resolver problemas.\\
+Un \textit{agente m\'ovil} es aquel que se puede mover a trav\'es de los sistemas de una red.
+
+\section{?`Qu\'e entiende por espacio de soluciones?}
+Dado un historial de un conjunto de posibles soluciones que el agente haya recopilado a trav\'es de las percepciones, el \textit{espacio de soluciones} es un subconjunto dentro de las posibles soluciones descritas anteriormente, este, sera el conjunto de posibles soluciones de un problema en un dominio restringido.
+
+\section{Definici\'on de t\'erminos}
+\label{sec:terminos}
+\textsc{Consigna}: \textbf{defina con sus propias palabras los siguientes t\'erminos: agente, funci\'on de agente, programa de agente, racionalidad, autonom\'ia, agente reactivo, agente basado en modelo, agente basado en objetivo, agente basado en utilidad, agente que aprende.}
+\subsection{Agente}
+El t\'ermino hace referencia a toda entidad que pueda relacionarse con su entorno en cierta medida, la forma en la que lo logra es mediante un conjunto de percepciones, llevadas a cabo mediante sensores, que lo llevan a conocer el ambiente, y al conocer el ambiente este puede interactuar con \'el por medio de actuadores.
+\subsection{Funci\'on de agente}
+Descripci\'on matem\'atica abstracta, que describe el comportamiento del agente.
+\subsection{Programa de agente}
+Esta es una implementaci\'on de la Funci\'on de agente.
+\subsection{Racionalidad}
+Es una caracter\'istica de los agentes que va a estar dada segun cuatro factores: \textit{Medida de rendimiento que define el criterio de \textbf{exito}}, \textit{Conocimiento que tiene acumulado el agente}, \textit{Acciones que puede llevar a cabo el agente} y \textit{la Secuencia de percepciones que tuvo el agente hasta ese momento}. De esta forma se puede definir a un agente racional de la siguiente manera:
+\textit{Agente que emprenda la acci\'on que maximice su medida de rendimiento, basandose en las evidencias que le aporta el historial de percepciones y el conocimiento que este tenga almacenado}.
+\subsection{Autonom\'ia}
+La autonom\'ia viene dada por como el agente actua ante los diferentes escenarios, si \'este se basa mas en el conocimiento inicial que le proporciona su dise\~{n}ador que de sus propias percepciones, se dice que el agente carece de autonom\'ia.
+\subsection{Agente reactivo simple}
+Estos son agentes que basan sus acciones sobre las percepciones \textit{actuales},ignorando el resto de las percepciones hist\'oricas.
+\subsection{Agente basado en modelo}
+Un modelo, en este caso, significa la forma en la que el agente abstrae el comportamiento del mundo, un agente que puede actuar basado en una abstraccion realizada se considera uno \textit{basado en modelos}.
+\subsection{Agente basado en objetivo}
+Este modelo del mundo, a veces no es suficiente para decidir que hacer, ademas del comportamiento que se tiene con la abstracci\'on del mundo, y la descripcion del estado actual del agente, se necesita informacion con respecto a la meta que este est\'e persiguiendo.
+\subsection{Agente basado en utilidad}
+\label{ref:utilidad}
+Si bien teniendo la meta puede parecer que es suficiente, como seres humanos siempre tomamos decisiones de las cuales no estamos concientes, an\'alogo a esta situacion en la que un agente debe determinar que combinacion de acciones le proveer\'ian de la mayor satisfacci\'on o \textit{felicidad}, la funcion de utilidad permite tomar desiciones racionales cuando hayan objetivos conflictivos, por ejemplo: viajando, queremos llegar a destino de una manera segura, pero tambien nos puede interesar llegar en el menor tiempo posible, que desiciones nos darian la mejor satisfacci\'on o \textit{felicidad}, esto nos da la \textit{Funci\'on de utilidad}.
+\subsection{Agente que aprende}
+Este no es unicamente uno que recopile informaci\'on mediante las percepciones que reciba, adem\'as debe aprender, el aprender implica lo siguiente, el agente es dotado con una configuraci\'on preeliminar del entorno, a medida que adquiere experiencea este puede modificar su propio conocimiento del entorno y de esta forma \textit{aprender}.
+
+\section{Medida de rendimiento y funci\'on de utilidad}
+\label{sec:utilidadeficiencia}
+\textsc{Consigna}: \textbf{Tanto la medida de rendimiento como la funci\'on de utilidad miden la eficiencia del agente. Explique la diferencia entre los dos conceptos.}\\
+Primero hablando de la \textit{medida de rendimiento}, esta tiene definido los criterios que van a determinar si el comportamiento del agente es un \'exito o un fracaso, si contrastamos eso con lo que nos dice la funcion de utilidad que hablamos en la \texttt{Secci\'on \ref{ref:utilidad}}, esta busca darnos una ponderacion sobre acciones que resultan conflictivas entre s\'i, sin decirnos si tenemos exito o no, simplemente ayuda al agente a tomar una desici\'on.
+
+\section{Descripciones PAMA}
+\label{sec:PAMA}
+\textit{[En proceso, lo subo incompleto asi  no pierdo la fecha de entrega]}\\
+\textsc{Consigna}: \textbf{realice las descripciones PAMA (Percepciones, Acciones, Metas y Ambiente) para los siguiente agentes: Robot que juega al f\'utbol, Agente para comprar libros en Internet, Explorador aut\'onomo de Marte, Asistente matem\'atico para la demostraci\'on de teoremas}
+\subsection{Robot que juega al f\'utbol}
+\subsection{Agente para comprar libros en Internet}
+\subsection{Explorador aut\'onomo de Marte}
+\subsection{Asistente matem\'atico para la demostraci\'on de teoremas}
+
+
+% === Bilbiografia === %
+\newpage
+\begin{thebibliography}{99}
+	% Item 1
+	\bibitem[Russel y Norvig, 2004]{russel}\textsc{Russel, S. J.; Norvig, P.}. \textit{Inteligencia Artificial, Un Enfoque Moderno}. Pearson Educaci\'on, S.A., Madrid, 2004, \textsc{ISBN: 84-205-4003-x}
+\end{thebibliography}
+\end{document}
