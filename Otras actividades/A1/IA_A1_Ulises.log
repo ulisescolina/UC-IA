@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.5.30)  15 SEP 2018 02:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.5.30)  17 SEP 2018 18:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -173,73 +173,130 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+Underfull \hbox (badness 10000) in paragraph at lines 19--20
+
+ []
+
+[2]
 Missing character: There is no Ã in font cmbxti10!
 Missing character: There is no ­ in font cmbxti10!
 Missing character: There is no Ã in font cmbxti10!
 Missing character: There is no ³ in font cmbxti10!
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.21 ...Clase1 \rightarrow Material primer clase}}
-                                                  
-? 
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 21.
+(Font)              <7> on input line 29.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 21.
-! Extra }, or forgotten $.
-<recently read> \egroup 
-                        
-l.21 ...Clase1 \rightarrow Material primer clase}}
-                                                  
-? 
-! Extra }, or forgotten $.
-<recently read> \egroup 
-                        
-l.21 ...Clase1 \rightarrow Material primer clase}}
-                                                  
-? 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.22 
-     
-? 
+(Font)              <5> on input line 29.
 
-LaTeX Font Warning: Font shape `OT1/cmr/bx/sc' undefined
-(Font)              using `OT1/cmr/bx/n' instead on input line 28.
+Overfull \hbox (60.84215pt too wide) in paragraph at lines 29--30
+\OT1/cmr/bx/it/10 cionaron al-gu-nas prop-ues-tas es-tan en: $\OML/cmm/m/it/10 
+Documentos \OMS/cmsy/m/n/10 ! \OML/cmm/m/it/10 Clase\OT1/cmr/m/n/10 1 \OMS/cmsy
+/m/n/10 ! \OML/cmm/m/it/10 Materialprimerclase$ 
+ []
 
-[1] (./IA_A1_Ulises.aux)
 
-LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+Underfull \hbox (badness 10000) in paragraph at lines 29--30
 
- )
-(\end occurred inside a group at level 2)
+ []
 
-### simple group (level 2) entered at line 21 ({)
-### simple group (level 1) entered at line 21 ({)
-### bottom level 
+Missing character: There is no Ã in font cmr10!
+Missing character: There is no ± in font cmr10!
+
+Overfull \hbox (16.60028pt too wide) in paragraph at lines 37--38
+\OT1/cmr/m/it/10 tiva so-cial \OT1/cmr/m/n/10 y la pre-dis-posici^^Son de in-ve
+r-sores en una em-presa [[]]. 
+ []
+
+[1]
+Underfull \hbox (badness 10000) in paragraph at lines 55--56
+
+ []
+
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 61--63
+
+ []
+
+[3]
+Underfull \hbox (badness 10000) in paragraph at lines 80--82
+[]\OT1/cmr/m/sc/10 Babu[]ska, Robert\OT1/cmr/m/n/10 . \OT1/cmr/m/it/10 Neuro-Fu
+zzy Meth-ods for Mod-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 80--82
+\OT1/cmr/m/it/10 el-ing and Iden-ti-fi-ca-tion\OT1/cmr/m/n/10 . Delft Uni-ver-s
+ity of Tech-nol-ogy, 2002.
+ []
+
+
+Overfull \hbox (35.5566pt too wide) in paragraph at lines 80--82
+\OT1/cmr/m/n/10 https://pdfs.semanticscholar.org/f4d9/ffa314e0461087952e4519d1b
+b0f3613f955.pdf
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 88--90
+[]\OT1/cmr/m/sc/10 Mourchid, Fa-tima; Hab-bani, Ahmed; El
+ []
+
+
+Underfull \hbox (badness 1975) in paragraph at lines 88--90
+\OT1/cmr/m/sc/10 Koutobi, Mo-hamed\OT1/cmr/m/n/10 . \OT1/cmr/m/it/10 Min-ing us
+er pat-terns for lo-ca-tion pre-dic-tion
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 90--92
+[]\OT1/cmr/m/sc/10 Gonz[]alez Garc[]^^Pa, Cris-tian; Meana-
+ []
+
+
+Underfull \hbox (badness 6110) in paragraph at lines 94--96
+[]\OT1/cmr/m/sc/10 Chen, Chen; Qifeng, Chen; Jia, Xu; Vladlen,
+ []
+
+
+Underfull \hbox (badness 7576) in paragraph at lines 94--96
+\OT1/cmr/m/sc/10 Koltun\OT1/cmr/m/n/10 . \OT1/cmr/m/it/10 Learn-ing to see in t
+he dark\OT1/cmr/m/n/10 . CVPR, 2018. $\OML/cmm/m/it/10 http \OT1/cmr/m/n/10 :
+ []
+
+
+Underfull \hbox (badness 4366) in paragraph at lines 94--96
+\OML/cmm/m/it/10 ==cchen\OT1/cmr/m/n/10 156\OML/cmm/m/it/10 :web:engr:illinois:
+edu=paper=\OT1/cmr/m/n/10 18\OML/cmm/m/it/10 CVPR[]SID:pdf$ \OT1/cmr/m/n/10 [Co
+n-sul-tado
+ []
+
+[4]
+Underfull \hbox (badness 10000) in paragraph at lines 108--109
+[]\OT1/cmr/m/sc/10 Facebook Re-search\OT1/cmr/m/n/10 . \OT1/cmr/m/it/10 Pub-li-
+ca-tions\OT1/cmr/m/n/10 .
+ []
+
+[5] (./IA_A1_Ulises.aux) ) 
 Here is how much of TeX's memory you used:
- 2615 strings out of 494923
- 41517 string characters out of 6180742
- 93178 words of memory out of 5000000
- 5926 multiletter control sequences out of 15000+600000
- 8895 words of font info for 31 fonts, out of 8000000 for 9000
+ 2643 strings out of 494923
+ 41846 string characters out of 6180742
+ 98554 words of memory out of 5000000
+ 5953 multiletter control sequences out of 15000+600000
+ 9063 words of font info for 32 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 41i,6n,38p,369b,200s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.
-pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb>
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr
-/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share
-/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf
--dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on IA_A1_Ulises.pdf (2 pages, 89103 bytes).
+ 41i,6n,38p,1797b,199s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmb
+xti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
+/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/sh
+are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on IA_A1_Ulises.pdf (7 pages, 152231 bytes).
 PDF statistics:
- 43 PDF objects out of 1000 (max. 8388607)
- 30 compressed objects within 1 object stream
+ 68 PDF objects out of 1000 (max. 8388607)
+ 48 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -7,7 +7,7 @@
 \usepackage{subcaption}
 \usepackage{float}
 
-\title{\textsc{Inteligencia Artificial\\Articulo Cient\'ifico}}
+\title{\textsc{Inteligencia Artificial\\Revisi\'on de Articulos Cient\'ificos}}
 \author{Ulises C. Ramirez}
 \date{13 de Septiembre, 2018}
 
@@ -19,22 +19,92 @@
 Para el corriente documento se est\'a llevando un versionado a fin de mantener un respaldo del trabajo y adem\'as proveer a la c\'atedra o a cualquier interesado la posibilidad de leer el material en la \'ultima versi\'on disponible.\\
 
 \begin{center}
-  \textsc{Repositorio}: \textit{https://github.com/ulisescolina/UC-IA}
+  \textsc{Repositorio}: \textit{https://github.com/ulisescolina/UC-IA/}
 \end{center}
 
 \hfill--\textsc{Ulises}
 \newpage
 % === Inicio del Cuerpo del Documento === %
 \pagenumbering{arabic}
-\textsc{Consigna}: \textit{\textbf{Los invito a buscar un articulo científico sobre temas vinculados a la inteligencia artificial y colocarlos en el Foro describiendo que les llamo la atención de este articulo y porque lo seleccionaron algunas propuestas estan en: $Documentos \rightarrow Clase1 \rightarrow Material primer clase$}}
+\textsc{Consigna}: \textit{\textbf{Los invito a buscar un articulo científico sobre temas vinculados a la inteligencia artificial y colocarlos en el Foro describiendo que les llamo la atención de este articulo y porque lo seleccionaron algunas propuestas estan en: $Documentos \rightarrow Clase1 \rightarrow Material primer clase$}}\\
 
+\textit{\textbf{Resumen}} -- gran parte de mi inter\'es en cuanto a la IA se ver\'an reflejados en los art\'iculos que voy a citar, por una parte la capacidad que se logra para la predicci\'on de ambientes extremadamente ca\'oticos, como ser el mercado de valores (\texttt{Secci\'on \ref{sec:stock}}) y sistemas/entornos sociales (\texttt{Secci\'on \ref{sec:social}}), por otra parte tambi\'en me intriga la capacidad que se tiene para el perfilamiento de estructuras muy complejas como por ejemplo algunos tipos de cancer (\texttt{Secci\'on \ref{sec:enfermedades}}), y llegar a poder detectar puntos clave que permiten dar un diagn\'ostico o una predicci\'on de si alguien tiene posibilidades de tener dicho acaecimiento, en ultima instancia, lo que voy a estar citando son trabajos que sientan sus bases en el prosesamiento de im\'agenes (\texttt{Secci\'on \ref{sec:imagenes}}).
+
+Sin embargo, lo que \textbf{M\'AS} capt\'o mi atenci\'on desde hace un tiempo atr\'as, es lo que hoy conozco como \textsc{Generative/Intuitive AI} (\texttt{Secci\'on \ref{sec:aiintuitiva}}).
+
+\section{Mercado de Acciones}
+\label{sec:stock}
+Este entorno es basicamente no-lineal en naturaleza, es decir cualquier cambio por mas pequeño que sea puede producir resultados totalmente inesperados, por lo cual los inversores buscan asegurar sus ganancias o minimizar sus riesgos, esto impulsa una gran cantidad de estudios en este \'ambito de predicci\'on del valor de acciones \cite{somani2014} \cite{sharma2017} \cite{srinivasan2017}, tambien en tratar de corelacionar cuestiones como la \textit{Responsabilidad Corporativa social} y la predisposici\'on de inversores en una empresa \cite{sukthomya2018}.
+
+Todo esto utilizando t\'ecnicas de Inteligencia artificial, matem\'aticas o una combinacion de ambas, Redes Neuronales Artificiales, diferentes tipos de regresi\'on.
+
+\section{Redes Sociales}
+\label{sec:social}
+Nuevas tecnolog\'ias permiten a las personas compartir informaci\'on de forma f\'acil, esto les brinda muchas comodidades aunque tambi\'en hace un mercado para dicho activo \textit{la informaci\'on}, esta es accesible y la lista de cosas que se pueden hacer con esta informaci\'on en el entorno de redes sociales es bastante amplia y el inter\'es en el \'area es excepcional empresas relacionadas con redes sociales tales como facebook tienen su propia divisi\'on de investigaci\'on en IA \cite{facebookr}, aqu\'i se notaron trabajos que atacaban el \'area de maneras bastante interesantes relacionados con el comportamiento de mobilidad \cite{mourchid2014}, relaci\'on dentro de una red dada por la uni\'on de nodos mediante aristas constituyendo un grafo \cite{mohamadyari2017}, el consumismo de las personas y sus opiniones expresadas en Twitter acerca de productos dando lugar a sistemas de recomendaci\'on que permiten entender al mercado y actuar en consecuencia \cite{garcia2017}, la implementaci\'on de multiagentes para investigar la transimsi\'on boca-a-boca en cuanto a la satisfacci\'on de productos y el resultado en comportamiento tales como la confianza \cite{durbach2007}.
+
+Mourchid, et al, postula que el entendimiento de la dinamica de mobilidad es de escencial importancia en las aplicaciones m\'oviles, especialmente las que son conscientes del entorno (Facebook, Twitter, Tinder). En este art\'iculo se busca utilizar datos de un servicio en l\'inea para geolocalizaci\'on para poder aplicar el conocimiento en el \textit{problema de predicci\'on} y asi predecir futuras ubicaciones mediante algun agente inteligente.
+
+Mohamadyari, et al, propone formar una funcion de prediccion que estima las relaciones de la red basadas en instancias pasadas de la misma.
+
+Gonz\'alez Garc\'ia, et al, propone hacer recomendaciones basadas en las publicaciones hechas en redes sociales, teniendo como principal objetivo el de terminar con un sistema ue permita recolectar las opiniones sobre diferentes lugares y luego procesar todo para obtener un puntaje, en donde una de las posibles soluciones para el analisis del puntaje es la implementaci\'on de una entidad que sea capaz de \textit{procesamiento de lenguaje natural}.
+
+
+
+\section{Enfermedades}
+\label{sec:enfermedades}
+En este caso, encuentro muy interesante la capacidad que nos brinda el poder \textit{identificar} cuestiones tales como el c\'ancer, en \cite{arslan2017} se demuestra que mediante la combinacion de \textit{redes neuronales} y t\'ecnicas de mineria de datos es posible realizar un diagnostico de \textit{c\'ancer pancre\'atico} que es seg\'un Arslan, et al, uno de los tipos de c\'ancer mas dif\'icil de reconocer tempranamente, queda clara la utilidad de la IA en un entorno de estas caracter\'isticas ya que detectar la condici\'on en etapas tempranas es crucial para incrementar las posibilidades de sobrevivir del paciente (si bien el articulo estaba en turco, la introducci\'on y el resumen estaban en ingl\'es, as\'i que pude tener una idea de lo que estaba hablando), el rol de la inteligencia artificial en este caso fue el de ``perfilar un microarreglo de genes'', lo cual parece similar a otro de los estudios cuyo proposito es el desarrollo de un metodo que esea capaz de clasificar c\'ancer en una categoria de diagnostico basado en firma de genes \cite{abbod2006}, esto se logra con la combinaci\'on de diferentes t\'ecnicas de IA entre ellas, \textit{modelado neuro-difuso} (que surge de la combinaci\'on de algoritmos de los campos de \textit{redes neuronales}, \textit{reconocimiento de patrones} y \textit{an\'alisis de regresi\'on} \cite{babuska2002}), \textit{redes neuronales artificiales} y un acercamiento tradicional a la \textit{regresi\'on logistica}, con  las t\'ecnicas mencionadas se produjeron modelos para la identificacion de tumores y de la progresi\'on, nivel y grado  de los mismos, la metodolog\'ia de  AI predijo la progresi\'on con una certeza de 100\% lo cual fue superior a la \textit{regresi\'on log\'istica} por ejemplo.\\
+
+Otro estudio interesante con el que me cruc\'e relacionado al c\'ancer fue \cite{marquez2009}, en el cual se toma un acercamiento multiagente para la realizaci\'on de diferentes tareas involucradas en el perfilamiento de tal condici\'on m\'edica, el lugar en el cual aplican tecnicas de mineria de datos como asi tambien de aprendizaje de maquina es en el agente que se encarga de la clasificaci\'on de tumores, cuya tarea es \textit{identificar a individuos sanos, individuos con cancer y sus variantes, ademas de indicar a que grupo pertenece un nuevo tumor y asi ayudar a definir el tratamiento}.
+
+\section{Interpretaci\'on de Im\'agenes}
+\label{sec:imagenes}
+Dificilmente algo de esta categor\'ia pase desapercibida ante los ojos de las personas, cuestiones como entender una foto de tal forma que se pueda realizar una descripcion de la misma en texto para as\'i permitir a alguien con escasa o nula visi\'on saber que es lo que esta viendo \cite{wu2017} o algo como aprender a ver en la oscuridad \cite{chen2018}.
+Estas son las cuestiones que me llaman la atenci\'on en esta subdivisi\'on de investigaci\'on en cuanto a AI que la ACM llama HCI (Interacci\'on Humano-Computadora, por sus siglas en ingles).\\
+
+En un principio tenemos a Wu, et al, gente de la empresa Facebook que dise\~{n}o un descriptor de imagenes, que aplica tecnolog\'ia de visi\'on de computadoras para asi poder identificar caras, objetos, etc, de fotos y de esta manera entender algo que es tan abstracto como el contexto de la captura de una fotograf\'ia para as\'i generar una descripci\'on en texto para usuarios de la utilidad ``Screen reader'', en este caso la IA se aplica en el reconocimiento facial, la seleccion de etiquetas, la construcci\'on de oraciones.
+
+Chen, et al, en su art\'iculo expresa que se puede llegar al mejoramiento de las imagenes con baja iluminaci\'on sin el percance o complejidad que puedan aportar otros m\'etodos, aqu\'i se entrena a una \textit{red convolucional} para que trate todo el proceso de tratamiento de la imagen.
+
+\section{AI Intuitiva}
+\label{sec:aiintuitiva}
+Como mencion\'e anteriormente, este es el area que m\'as me llam\'o la atenci\'on, una explicaci\'on buen\'isima de qu\'e es, y qu\'e cosas se logran lo podemos encontrar en una charla TED de aproximadamente 15 minutos \cite{conti2016} (\textit{altamente recomendable}), aqu\'i, el presentador pasa por algunos de los puntos mas prominentes del \'area y da varios ejemplos de proyectos dentro de \'este \'ambito.
 
 % === Bilbiografia === %
-
+\newpage
 \begin{thebibliography}{99}
-	% Item 1
+	% Item
+	\bibitem[Arslan, et al, 2017]{arslan2017}\textsc{Arslan, Derya; \"Ozdemir, Merve Erkinay; Arslan, Mustafa Turan}. \textit{Diagnosis of Pancreatic Cancer by Pattern Recognition Methods Using Gene Expression}.
+	% Item
+	\bibitem[Abbod, et al, 2006]{abbod2006} \textsc{M. F. Abbod; J. W. F. Catto; D. A. Linkens; P. J. Wild; A. Herr; C. Wissmann; C. Pilarsky; A. Hartmann; F. C. Hamdy}. \textit{Artificial Intelligence Technique for Gene Expression Profiling of Urinary Bladder Cancer}. 3rd International IEEE Conference Intelligent Systems, 2006.
+	% Item
+	\bibitem[Babu\v{s}ka, 2002]{babuska2002}\textsc{Babu\v{s}ka, Robert}. \textit{Neuro-Fuzzy Methods for Modeling and Identification}. Delft University of Technology, 2002. https://pdfs.semanticscholar.org/f4d9/ffa314e0461087952e4519d1bb0f3613f955.pdf [Consultado el 16 de Septiembre, 2018]
+	% Item
+	\bibitem[Edna M\'arquez, 2009]{marquez2009}\textsc{Edna M\'arquez, Jes\'us Savage; Jaime Berumen, Ana Espinosa}. \textit{Multi-agent system for gene expression analysis to identify involved genes in cervical cancer}. 8th Mexican International Conference on Artificial Intelligence, 2009.
+	% Item
+	\bibitem[Sathik, et al, 2009]{sathik2009}\textsc{Sathik, M. Mohamed; Rasheed, A. Abdul}. \textit{Social Networks of Buying -- Likely Patterns}.
+	% Item
 	\bibitem[Mohamadyari, et al, 2017]{mohamadyari2017} \textsc{Mohamadyari, Saina; Attar, Niousha; Aliakbary, Sadegh}. \textit{On Feature prediction in Temporal Social Networks based on Artificial Neural Network Learning}. Ferdowsi University of Mashhad. 7th International Conference on Computer and Knowledge Engineering, ICCKE, 2017.
-	% Item 2
-	\bibitem[]{}
+	% Item
+	\bibitem[Mourchid, et al, 2014]{mourchid2014}\textsc{Mourchid, Fatima; Habbani, Ahmed; El Koutobi, Mohamed}. \textit{Mining user patterns for location prediction in mobile social networks}. 2014.
+	% Item
+	\bibitem[Gonz\'alez Garc\'ia, et al, 2017]{garcia2017} \textsc{Gonz\'alez Garc\'ia, Cristian; Meana-Llori\'an, Daniel; Garc\'ia-D\'iaz, Vicente; N\'u\~{n}ez-Valdez, Edward Rolando}. \textit{Social Recommender System: a recommender system based on tweets for points of interests}. University of Oviedo, 2017.
+	% Item
+	\bibitem[Durbach, et al, 2007]{durbach2007}\textsc{Durbach, Ian N.; Hofmeyr, Jan H.}. \textit{Interactions between market barriers and communication networks in marketing systems}. Proceedings of the 6th international joint conference on Autonomous agents and multiagents systems, AAMAS, 2007.
+	% Item
+	\bibitem[Chen, 2018]{chen2018}\textsc{Chen, Chen; Qifeng, Chen; Jia, Xu; Vladlen, Koltun}. \textit{Learning to see in the dark}. CVPR, 2018. $http://cchen156.web.engr.illinois.edu/paper/18CVPR\_SID.pdf$ [Consultado el 17 de Septiembre, 2018]
+	% Item
+	\bibitem[Wu, 2017]{wu2017}\textsc{Wu, Shaomei; Wieland, Jeffrey; Farivar, Omid; Schiller, Julie}. \textit{Automatic Alt-text: Computer-generated image Descriptions for Blind Users on a Social Network Service}. CSCW, 2017.
+	% Item
+	\bibitem[Somani, et al, 2014]{somani2014} \textsc{Somani, Poonam; Talele, Shreyas; Sawant, Suraj}. \textit{Stock market prediction using Hidden Markov Model}. College of Engineering Pune, 2014.
+	% Item
+	\bibitem[Srinivasan, et al, 2017]{srinivasan2017}\textsc{Srinivasan, N.; Lakshmi, C}. \textit{Stock prediction and analysis using intermittent training data with artificial neural networks}. Sathyabama University, 2017.
+	% Item
+	\bibitem[Sukthomya, et al, 2018]{sukthomya2018}\textsc{Sukthomya, Duraya; Laosiritaworn, Wimalin}. \textit{Modeling of the relationship between corporate social responsibility and stock price with artificial neural network}. 7th International Conference on Industrial Technology and Management, 2018.
+	% Item
+	\bibitem[Sharma, et al, 2017]{sharma2017}\textsc{Sharma, Ashish; Bhuriya, Dinesh; Singh, Upendra}. \textit{Survey of stock market prediction using machine learning aproach}. International Conference on Electronics, Communication and Aerospace Technology, 2017.
+	% Item
+	\bibitem[Conti, 2016]{conti2016}\textsc{Conti, Maurice}. \textit{The incredible inventions of intuitive AI}. TEDxPortland, 2016. https://goo.gl/hXYyE3 [Consultado el 15 de Septiembre, 2018]
+	% Item
+	\bibitem[facebook research]{facebookr}\textsc{Facebook Research}. \textit{Publications}. https://research.fb.com/publications/
 \end{thebibliography}
 \end{document}
