@@ -1,0 +1,347 @@
+@startuml ej4.png
+usecase A as "A\n---\nX"
+(A) -- (B)
+(A) -- (C)
+(A) -- (D)
+newpage
+
+usecase A as "A\n---\nX"
+usecase B as "B\n---\nX"
+(A) -- (B)
+(A) -- (C)
+(A) -- (D)
+(B) -- (I)
+(B) -- (H)
+(B) -- (G)
+newpage
+
+usecase A as "A\n---\nX"
+usecase B as "B\n---\nX"
+usecase C as "C\n---\nX"
+(A) -- (B)
+(A) -- (C)
+(A) -- (D)
+(B) -- (I)
+(B) -- (H)
+(B) -- (G)
+(C) -- (G*)
+(C) -- (F)
+
+newpage
+
+
+usecase A as "A\n---\nX"
+usecase B as "B\n---\nX"
+usecase C as "C\n---\nX"
+usecase D as "D\n---\nX"
+(A) -- (B)
+(A) -- (C)
+(A) -- (D)
+(B) -- (I)
+(B) -- (H)
+(B) -- (G)
+(C) -- (G*)
+(C) -- (F)
+(D) -- (E)
+(D) -- (L)
+
+newpage
+
+usecase A as "A\n---\nX"
+usecase B as "B\n---\nX"
+usecase C as "C\n---\nX"
+usecase D as "D\n---\nX"
+usecase I as "I\n---\nX"
+(A) -- (B)
+(A) -- (C)
+(A) -- (D)
+(B) -- (I)
+(B) -- (H)
+(B) -- (G)
+(C) -- (G*)
+(C) -- (F)
+(D) -- (E)
+(D) -- (L)
+(I) -- (J)
+
+newpage
+
+usecase A as "A\n---\nX"
+usecase B as "B\n---\nX"
+usecase C as "C\n---\nX"
+usecase D as "D\n---\nX"
+usecase I as "I\n---\nX"
+usecase H as "H\n---\nX"
+(A) -- (B)
+(A) -- (C)
+(A) -- (D)
+(B) -- (I)
+(B) -- (H)
+(B) -- (G)
+(C) -- (G*)
+(C) -- (F)
+(D) -- (E)
+(D) -- (L)
+(I) -- (J)
+
+newpage
+
+usecase A as "A\n---\nX"
+usecase B as "B\n---\nX"
+usecase C as "C\n---\nX"
+usecase D as "D\n---\nX"
+usecase I as "I\n---\nX"
+usecase H as "H\n---\nX"
+usecase G as "G\n---\nX"
+(A) -- (B)
+(A) -- (C)
+(A) -- (D)
+(B) -- (I)
+(B) -- (H)
+(B) -- (G)
+(C) -- (G*)
+(C) -- (F)
+(D) -- (E)
+(D) -- (L)
+(I) -- (J)
+(G) -- (J*)
+
+newpage
+
+usecase A as "A\n---\nX"
+usecase B as "B\n---\nX"
+usecase C as "C\n---\nX"
+usecase D as "D\n---\nX"
+usecase I as "I\n---\nX"
+usecase H as "H\n---\nX"
+usecase G as "G\n---\nX"
+usecase Gs as "G*\n---\nDuplicado"
+(A) -- (B)
+(A) -- (C)
+(A) -- (D)
+(B) -- (I)
+(B) -- (H)
+(B) -- (G)
+(C) -- (Gs)
+(C) -- (F)
+(D) -- (E)
+(D) -- (L)
+(I) -- (J)
+(G) -- (J*)
+
+newpage
+
+usecase A as "A\n---\nX"
+usecase B as "B\n---\nX"
+usecase C as "C\n---\nX"
+usecase D as "D\n---\nX"
+usecase I as "I\n---\nX"
+usecase H as "H\n---\nX"
+usecase G as "G\n---\nX"
+usecase Gs as "G*\n---\nDuplicado"
+usecase F as "F\n---\nX"
+(A) -- (B)
+(A) -- (C)
+(A) -- (D)
+(B) -- (I)
+(B) -- (H)
+(B) -- (G)
+(C) -- (Gs)
+(C) -- (F)
+(D) -- (E)
+(D) -- (L)
+(I) -- (J)
+(G) -- (J*)
+(F) -- (J**)
+(F) -- (K)
+(F) -- (L*)
+
+newpage
+
+usecase A as "A\n---\nX"
+usecase B as "B\n---\nX"
+usecase C as "C\n---\nX"
+usecase D as "D\n---\nX"
+usecase I as "I\n---\nX"
+usecase H as "H\n---\nX"
+usecase G as "G\n---\nX"
+usecase Gs as "G*\n---\nDuplicado"
+usecase F as "F\n---\nX"
+usecase E as "E\n---\nX"
+(A) -- (B)
+(A) -- (C)
+(A) -- (D)
+(B) -- (I)
+(B) -- (H)
+(B) -- (G)
+(C) -- (Gs)
+(C) -- (F)
+(D) -- (E)
+(D) -- (L)
+(I) -- (J)
+(G) -- (J*)
+(F) -- (J**)
+(F) -- (K)
+(F) -- (L*)
+
+newpage
+
+usecase A as "A\n---\nX"
+usecase B as "B\n---\nX"
+usecase C as "C\n---\nX"
+usecase D as "D\n---\nX"
+usecase I as "I\n---\nX"
+usecase H as "H\n---\nX"
+usecase G as "G\n---\nX"
+usecase Gs as "G*\n---\nDuplicado"
+usecase F as "F\n---\nX"
+usecase E as "E\n---\nX"
+usecase L as "L\n---\nX"
+(A) -- (B)
+(A) -- (C)
+(A) -- (D)
+(B) -- (I)
+(B) -- (H)
+(B) -- (G)
+(C) -- (Gs)
+(C) -- (F)
+(D) -- (E)
+(D) -- (L)
+(I) -- (J)
+(G) -- (J*)
+(F) -- (J**)
+(F) -- (K)
+(F) -- (L*)
+(L) -- (M)
+
+newpage
+
+usecase A as "A\n---\nX"
+usecase B as "B\n---\nX"
+usecase C as "C\n---\nX"
+usecase D as "D\n---\nX"
+usecase I as "I\n---\nX"
+usecase H as "H\n---\nX"
+usecase G as "G\n---\nX"
+usecase Gs as "G*\n---\nDuplicado"
+usecase F as "F\n---\nX"
+usecase E as "E\n---\nX"
+usecase L as "L\n---\nX"
+usecase J as "J\n---\nX"
+(A) -- (B)
+(A) -- (C)
+(A) -- (D)
+(B) -- (I)
+(B) -- (H)
+(B) -- (G)
+(C) -- (Gs)
+(C) -- (F)
+(D) -- (E)
+(D) -- (L)
+(I) -- (J)
+(G) -- (J*)
+(F) -- (J**)
+(F) -- (K)
+(F) -- (L*)
+(L) -- (M)
+
+newpage
+
+usecase A as "A\n---\nX"
+usecase B as "B\n---\nX"
+usecase C as "C\n---\nX"
+usecase D as "D\n---\nX"
+usecase I as "I\n---\nX"
+usecase H as "H\n---\nX"
+usecase G as "G\n---\nX"
+usecase Gs as "G*\n---\nDuplicado"
+usecase F as "F\n---\nX"
+usecase E as "E\n---\nX"
+usecase L as "L\n---\nX"
+usecase J as "J\n---\nX"
+usecase Js as "J*\n---\nDuplicado"
+(A) -- (B)
+(A) -- (C)
+(A) -- (D)
+(B) -- (I)
+(B) -- (H)
+(B) -- (G)
+(C) -- (Gs)
+(C) -- (F)
+(D) -- (E)
+(D) -- (L)
+(I) -- (J)
+(G) -- (Js)
+(F) -- (J**)
+(F) -- (K)
+(F) -- (L*)
+(L) -- (M)
+
+newpage
+
+usecase A as "A\n---\nX"
+usecase B as "B\n---\nX"
+usecase C as "C\n---\nX"
+usecase D as "D\n---\nX"
+usecase I as "I\n---\nX"
+usecase H as "H\n---\nX"
+usecase G as "G\n---\nX"
+usecase Gs as "G*\n---\nDuplicado"
+usecase F as "F\n---\nX"
+usecase E as "E\n---\nX"
+usecase L as "L\n---\nX"
+usecase J as "J\n---\nX"
+usecase Js as "J*\n---\nDuplicado"
+usecase Jss as "J**\n---\nDuplicado"
+(A) -- (B)
+(A) -- (C)
+(A) -- (D)
+(B) -- (I)
+(B) -- (H)
+(B) -- (G)
+(C) -- (Gs)
+(C) -- (F)
+(D) -- (E)
+(D) -- (L)
+(I) -- (J)
+(G) -- (Js)
+(F) -- (Jss)
+(F) -- (K)
+(F) -- (L*)
+(L) -- (M)
+
+newpage
+
+usecase A as "A\n---\nX"
+usecase B as "B\n---\nX"
+usecase C as "C\n---\nX"
+usecase D as "D\n---\nX"
+usecase I as "I\n---\nX"
+usecase H as "H\n---\nX"
+usecase G as "G\n---\nX"
+usecase Gs as "G*\n---\nDuplicado"
+usecase F as "F\n---\nX"
+usecase E as "E\n---\nX"
+usecase L as "L\n---\nX"
+usecase J as "J\n---\nX"
+usecase Js as "J*\n---\nDuplicado"
+usecase Jss as "J**\n---\nDuplicado"
+usecase K as "K\n---\nNodo Objetivo"
+(A) -- (B)
+(A) -- (C)
+(A) -- (D)
+(B) -- (I)
+(B) -- (H)
+(B) -- (G)
+(C) -- (Gs)
+(C) -- (F)
+(D) -- (E)
+(D) -- (L)
+(I) -- (J)
+(G) -- (Js)
+(F) -- (Jss)
+(F) -- (K)
+(F) -- (L*)
+(L) -- (M)
+
+@enduml
