@@ -1,0 +1,212 @@
+@startuml profundidad.png
+(A) -- (B)
+(A) -- (C)
+(A) -- (D)
+
+newpage
+
+(A) -- (B)
+(A) -- (C)
+(A) -- (D)
+(B) -- (I)
+(B) -- (H)
+(B) -- (G)
+
+newpage
+
+usecase J as "J\n---\nX"
+(A) -- (B)
+(A) -- (C)
+(A) -- (D)
+(B) -- (I)
+(B) -- (H)
+(B) -- (G)
+(I) -- (J)
+
+newpage
+
+usecase J as "J\n---\nX"
+usecase I as "I\n---\nX"
+(A) -- (B)
+(A) -- (C)
+(A) -- (D)
+(B) -- (I)
+(B) -- (H)
+(B) -- (G)
+(I) -- (J)
+
+newpage
+
+usecase J as "J\n---\nX"
+usecase I as "I\n---\nX"
+usecase H as "H\n---\nX"
+(A) -- (B)
+(A) -- (C)
+(A) -- (D)
+(B) -- (I)
+(B) -- (H)
+(B) -- (G)
+(I) -- (J)
+
+newpage
+
+usecase J as "J\n---\nX"
+usecase I as "I\n---\nX"
+usecase H as "H\n---\nX"
+usecase Js as "J*\n---\nDuplicado"
+(A) -- (B)
+(A) -- (C)
+(A) -- (D)
+(B) -- (I)
+(B) -- (H)
+(B) -- (G)
+(I) -- (J)
+(G) -- (Js)
+
+newpage
+
+usecase J as "J\n---\nX"
+usecase I as "I\n---\nX"
+usecase H as "H\n---\nX"
+usecase Js as "J*\n---\nDuplicado"
+usecase G as "G\n---\nX"
+(A) -- (B)
+(A) -- (C)
+(A) -- (D)
+(B) -- (I)
+(B) -- (H)
+(B) -- (G)
+(I) -- (J)
+(G) -- (Js)
+
+newpage
+
+usecase J as "J\n---\nX"
+usecase I as "I\n---\nX"
+usecase H as "H\n---\nX"
+usecase Js as "J*\n---\nDuplicado"
+usecase G as "G\n---\nX"
+usecase B as "B\n---\nX"
+(A) -- (B)
+(A) -- (C)
+(A) -- (D)
+(B) -- (I)
+(B) -- (H)
+(B) -- (G)
+(I) -- (J)
+(G) -- (Js)
+
+newpage
+
+usecase J as "J\n---\nX"
+usecase I as "I\n---\nX"
+usecase H as "H\n---\nX"
+usecase Js as "J*\n---\nDuplicado"
+usecase G as "G\n---\nX"
+usecase B as "B\n---\nX"
+usecase Gs as "G*"
+(A) -- (B)
+(A) -- (C)
+(A) -- (D)
+(B) -- (I)
+(B) -- (H)
+(B) -- (G)
+(I) -- (J)
+(G) -- (Js)
+(C) -- (Gs)
+(C) -- (F)
+
+newpage
+
+usecase J as "J\n---\nX"
+usecase I as "I\n---\nX"
+usecase H as "H\n---\nX"
+usecase Js as "J*\n---\nDuplicado"
+usecase G as "G\n---\nX"
+usecase B as "B\n---\nX"
+usecase Gs as "G*\n---\nDuplicado"
+(A) -- (B)
+(A) -- (C)
+(A) -- (D)
+(B) -- (I)
+(B) -- (H)
+(B) -- (G)
+(I) -- (J)
+(G) -- (Js)
+(C) -- (Gs)
+(C) -- (F)
+
+newpage
+
+usecase J as "J\n---\nX"
+usecase I as "I\n---\nX"
+usecase H as "H\n---\nX"
+usecase Js as "J*\n---\nDuplicado"
+usecase G as "G\n---\nX"
+usecase B as "B\n---\nX"
+usecase Gs as "G*\n---\nDuplicado"
+usecase Jss as "J**"
+(A) -- (B)
+(A) -- (C)
+(A) -- (D)
+(B) -- (I)
+(B) -- (H)
+(B) -- (G)
+(I) -- (J)
+(G) -- (Js)
+(C) -- (Gs)
+(C) -- (F)
+(F) -- (Jss)
+(F) -- (K)
+(F) -- (L)
+
+newpage
+
+usecase J as "J\n---\nX"
+usecase I as "I\n---\nX"
+usecase H as "H\n---\nX"
+usecase Js as "J*\n---\nDuplicado"
+usecase G as "G\n---\nX"
+usecase B as "B\n---\nX"
+usecase Gs as "G*\n---\nDuplicado"
+usecase Jss as "J**\n---\nDuplicado"
+(A) -- (B)
+(A) -- (C)
+(A) -- (D)
+(B) -- (I)
+(B) -- (H)
+(B) -- (G)
+(I) -- (J)
+(G) -- (Js)
+(C) -- (Gs)
+(C) -- (F)
+(F) -- (Jss)
+(F) -- (K)
+(F) -- (L)
+
+
+newpage
+
+usecase J as "J\n---\nX"
+usecase I as "I\n---\nX"
+usecase H as "H\n---\nX"
+usecase Js as "J*\n---\nDuplicado"
+usecase G as "G\n---\nX"
+usecase B as "B\n---\nX"
+usecase Gs as "G*\n---\nDuplicado"
+usecase Jss as "J**\n---\nDuplicado"
+usecase K as "K\n---\nNodo Objetivo"
+(A) -- (B)
+(A) -- (C)
+(A) -- (D)
+(B) -- (I)
+(B) -- (H)
+(B) -- (G)
+(I) -- (J)
+(G) -- (Js)
+(C) -- (Gs)
+(C) -- (F)
+(F) -- (Jss)
+(F) -- (K)
+(F) -- (L)
+@enduml
