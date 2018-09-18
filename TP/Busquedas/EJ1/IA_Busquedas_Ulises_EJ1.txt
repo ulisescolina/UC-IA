@@ -1,0 +1,556 @@
+@startuml amplitud_ciudades.png
+
+usecase Arad as "Arad\n---\nX"
+(Arad) -- (Timisoara)
+(Arad) -- (Sibiu)
+(Arad) -- (Zerind)
+
+newpage
+
+usecase Arad as "Arad\n---\nX"
+usecase Timisoara as "Timisoara\n---\nX"
+(Arad) -- (Timisoara)
+(Arad) -- (Sibiu)
+(Arad) -- (Zerind)
+(Timisoara) -- (Lugoj)
+(Timisoara) -- (Arad*)
+
+newpage
+
+usecase Arad as "Arad\n---\nX"
+usecase Timisoara as "Timisoara\n---\nX"
+usecase Sibiu as "Sibiu\n---\nX"
+(Arad) -- (Timisoara)
+(Arad) -- (Sibiu)
+(Arad) -- (Zerind)
+(Timisoara) -- (Lugoj)
+(Timisoara) -- (Arad*)
+(Sibiu) -- (Rimnicu Vilcea)
+(Sibiu) -- (Fagaras)
+(Sibiu) -- (Arad**)
+(Sibiu) -- (Oradea)
+
+newpage
+
+usecase Arad as "Arad\n---\nX"
+usecase Timisoara as "Timisoara\n---\nX"
+usecase Sibiu as "Sibiu\n---\nX"
+usecase Zerind as "Zerind\n---\nX"
+(Arad) -- (Timisoara)
+(Arad) -- (Sibiu)
+(Arad) -- (Zerind)
+(Timisoara) -- (Lugoj)
+(Timisoara) -- (Arad*)
+(Sibiu) -- (Rimnicu Vilcea)
+(Sibiu) -- (Fagaras)
+(Sibiu) -- (Arad**)
+(Sibiu) -- (Oradea)
+(Zerind) -- (Arad***)
+(Zerind) -- (Oradea*)
+
+newpage
+
+usecase Arad as "Arad\n---\nX"
+usecase Timisoara as "Timisoara\n---\nX"
+usecase Sibiu as "Sibiu\n---\nX"
+usecase Zerind as "Zerind\n---\nX"
+usecase Lugoj as "Lugoj\n---\nX"
+(Arad) -- (Timisoara)
+(Arad) -- (Sibiu)
+(Arad) -- (Zerind)
+(Timisoara) -- (Lugoj)
+(Timisoara) -- (Arad*)
+(Sibiu) -- (Rimnicu Vilcea)
+(Sibiu) -- (Fagaras)
+(Sibiu) -- (Arad**)
+(Sibiu) -- (Oradea)
+(Zerind) -- (Arad***)
+(Zerind) -- (Oradea*)
+(Lugoj) -- (Mehadia)
+(Lugoj) -- (Timisoara*)
+
+newpage
+
+usecase Arad as "Arad\n---\nX"
+usecase Timisoara as "Timisoara\n---\nX"
+usecase Sibiu as "Sibiu\n---\nX"
+usecase Zerind as "Zerind\n---\nX"
+usecase Lugoj as "Lugoj\n---\nX"
+usecase Arads as "Arad*\n---\nDuplicado"
+(Arad) -- (Timisoara)
+(Arad) -- (Sibiu)
+(Arad) -- (Zerind)
+(Timisoara) -- (Lugoj)
+(Timisoara) -- (Arads)
+(Sibiu) -- (Rimnicu Vilcea)
+(Sibiu) -- (Fagaras)
+(Sibiu) -- (Arad**)
+(Sibiu) -- (Oradea)
+(Zerind) -- (Arad***)
+(Zerind) -- (Oradea*)
+(Lugoj) -- (Mehadia)
+(Lugoj) -- (Timisoara*)
+
+newpage
+
+(Rimnicu Vilcea) as (RV)
+usecase Arad as "Arad\n---\nX"
+usecase Timisoara as "Timisoara\n---\nX"
+usecase Sibiu as "Sibiu\n---\nX"
+usecase Zerind as "Zerind\n---\nX"
+usecase Lugoj as "Lugoj\n---\nX"
+usecase Arads as "Arad*\n---\nDuplicado"
+usecase RV as "Rimnicu Vilcea\n---\nX"
+(Arad) -- (Timisoara)
+(Arad) -- (Sibiu)
+(Arad) -- (Zerind)
+(Timisoara) -- (Lugoj)
+(Timisoara) -- (Arads)
+(Sibiu) -- (RV)
+(Sibiu) -- (Fagaras)
+(Sibiu) -- (Arad**)
+(Sibiu) -- (Oradea)
+(Zerind) -- (Arad***)
+(Zerind) -- (Oradea*)
+(Lugoj) -- (Mehadia)
+(Lugoj) -- (Timisoara*)
+(RV) -- (Craiova)
+(RV) -- (Pitesti)
+(RV) -- (Sibiu*)
+
+newpage
+
+(Rimnicu Vilcea) as (RV)
+usecase Arad as "Arad\n---\nX"
+usecase Timisoara as "Timisoara\n---\nX"
+usecase Sibiu as "Sibiu\n---\nX"
+usecase Zerind as "Zerind\n---\nX"
+usecase Lugoj as "Lugoj\n---\nX"
+usecase Arads as "Arad*\n---\nDuplicado"
+usecase RV as "Rimnicu Vilcea\n---\nX"
+usecase Fagaras as "Fagaras\n---\nX"
+(Arad) -- (Timisoara)
+(Arad) -- (Sibiu)
+(Arad) -- (Zerind)
+(Timisoara) -- (Lugoj)
+(Timisoara) -- (Arads)
+(Sibiu) -- (RV)
+(Sibiu) -- (Fagaras)
+(Sibiu) -- (Arad**)
+(Sibiu) -- (Oradea)
+(Zerind) -- (Arad***)
+(Zerind) -- (Oradea*)
+(Lugoj) -- (Mehadia)
+(Lugoj) -- (Timisoara*)
+(RV) -- (Craiova)
+(RV) -- (Pitesti)
+(RV) -- (Sibiu*)
+(Fagaras) -- (Bucharest)
+(Fagaras) -- (Sibiu**)
+
+newpage
+
+(Rimnicu Vilcea) as (RV)
+usecase Arad as "Arad\n---\nX"
+usecase Timisoara as "Timisoara\n---\nX"
+usecase Sibiu as "Sibiu\n---\nX"
+usecase Zerind as "Zerind\n---\nX"
+usecase Lugoj as "Lugoj\n---\nX"
+usecase Arads as "Arad*\n---\nDuplicado"
+usecase RV as "Rimnicu Vilcea\n---\nX"
+usecase Fagaras as "Fagaras\n---\nX"
+usecase Aradss as "Arad**\n---\nDuplicado"
+(Arad) -- (Timisoara)
+(Arad) -- (Sibiu)
+(Arad) -- (Zerind)
+(Timisoara) -- (Lugoj)
+(Timisoara) -- (Arads)
+(Sibiu) -- (RV)
+(Sibiu) -- (Fagaras)
+(Sibiu) -- (Aradss)
+(Sibiu) -- (Oradea)
+(Zerind) -- (Arad***)
+(Zerind) -- (Oradea*)
+(Lugoj) -- (Mehadia)
+(Lugoj) -- (Timisoara*)
+(RV) -- (Craiova)
+(RV) -- (Pitesti)
+(RV) -- (Sibiu*)
+(Fagaras) -- (Bucharest)
+(Fagaras) -- (Sibiu**)
+
+newpage
+
+(Rimnicu Vilcea) as (RV)
+usecase Arad as "Arad\n---\nX"
+usecase Timisoara as "Timisoara\n---\nX"
+usecase Sibiu as "Sibiu\n---\nX"
+usecase Zerind as "Zerind\n---\nX"
+usecase Lugoj as "Lugoj\n---\nX"
+usecase Arads as "Arad*\n---\nDuplicado"
+usecase RV as "Rimnicu Vilcea\n---\nX"
+usecase Fagaras as "Fagaras\n---\nX"
+usecase Aradss as "Arad**\n---\nDuplicado"
+usecase Oradea as "Oradea\n---\nX"
+(Arad) -- (Timisoara)
+(Arad) -- (Sibiu)
+(Arad) -- (Zerind)
+(Timisoara) -- (Lugoj)
+(Timisoara) -- (Arads)
+(Sibiu) -- (RV)
+(Sibiu) -- (Fagaras)
+(Sibiu) -- (Aradss)
+(Sibiu) -- (Oradea)
+(Zerind) -- (Arad***)
+(Zerind) -- (Oradea*)
+(Lugoj) -- (Mehadia)
+(Lugoj) -- (Timisoara*)
+(RV) -- (Craiova)
+(RV) -- (Pitesti)
+(RV) -- (Sibiu*)
+(Fagaras) -- (Bucharest)
+(Fagaras) -- (Sibiu**)
+(Oradea) -- (Sibiu***)
+(Oradea) -- (Zerind*)
+
+newpage
+
+(Rimnicu Vilcea) as (RV)
+usecase Arad as "Arad\n---\nX"
+usecase Timisoara as "Timisoara\n---\nX"
+usecase Sibiu as "Sibiu\n---\nX"
+usecase Zerind as "Zerind\n---\nX"
+usecase Lugoj as "Lugoj\n---\nX"
+usecase Arads as "Arad*\n---\nDuplicado"
+usecase RV as "Rimnicu Vilcea\n---\nX"
+usecase Fagaras as "Fagaras\n---\nX"
+usecase Aradss as "Arad**\n---\nDuplicado"
+usecase Oradea as "Oradea\n---\nX"
+usecase Aradsss as "Arad***\n---\nDuplicado"
+(Arad) -- (Timisoara)
+(Arad) -- (Sibiu)
+(Arad) -- (Zerind)
+(Timisoara) -- (Lugoj)
+(Timisoara) -- (Arads)
+(Sibiu) -- (RV)
+(Sibiu) -- (Fagaras)
+(Sibiu) -- (Aradss)
+(Sibiu) -- (Oradea)
+(Zerind) -- (Aradsss)
+(Zerind) -- (Oradea*)
+(Lugoj) -- (Mehadia)
+(Lugoj) -- (Timisoara*)
+(RV) -- (Craiova)
+(RV) -- (Pitesti)
+(RV) -- (Sibiu*)
+(Fagaras) -- (Bucharest)
+(Fagaras) -- (Sibiu**)
+(Oradea) -- (Sibiu***)
+(Oradea) -- (Zerind*)
+
+newpage
+
+(Rimnicu Vilcea) as (RV)
+usecase Arad as "Arad\n---\nX"
+usecase Timisoara as "Timisoara\n---\nX"
+usecase Sibiu as "Sibiu\n---\nX"
+usecase Zerind as "Zerind\n---\nX"
+usecase Lugoj as "Lugoj\n---\nX"
+usecase Arads as "Arad*\n---\nDuplicado"
+usecase RV as "Rimnicu Vilcea\n---\nX"
+usecase Fagaras as "Fagaras\n---\nX"
+usecase Aradss as "Arad**\n---\nDuplicado"
+usecase Oradea as "Oradea\n---\nX"
+usecase Aradsss as "Arad***\n---\nDuplicado"
+usecase Oradeas as "Oradea*\n---\nDuplicado"
+(Arad) -- (Timisoara)
+(Arad) -- (Sibiu)
+(Arad) -- (Zerind)
+(Timisoara) -- (Lugoj)
+(Timisoara) -- (Arads)
+(Sibiu) -- (RV)
+(Sibiu) -- (Fagaras)
+(Sibiu) -- (Aradss)
+(Sibiu) -- (Oradea)
+(Zerind) -- (Aradsss)
+(Zerind) -- (Oradeas)
+(Lugoj) -- (Mehadia)
+(Lugoj) -- (Timisoara*)
+(RV) -- (Craiova)
+(RV) -- (Pitesti)
+(RV) -- (Sibiu*)
+(Fagaras) -- (Bucharest)
+(Fagaras) -- (Sibiu**)
+(Oradea) -- (Sibiu***)
+(Oradea) -- (Zerind*)
+
+newpage
+
+(Rimnicu Vilcea) as (RV)
+usecase Arad as "Arad\n---\nX"
+usecase Timisoara as "Timisoara\n---\nX"
+usecase Sibiu as "Sibiu\n---\nX"
+usecase Zerind as "Zerind\n---\nX"
+usecase Lugoj as "Lugoj\n---\nX"
+usecase Arads as "Arad*\n---\nDuplicado"
+usecase RV as "Rimnicu Vilcea\n---\nX"
+usecase Fagaras as "Fagaras\n---\nX"
+usecase Aradss as "Arad**\n---\nDuplicado"
+usecase Oradea as "Oradea\n---\nX"
+usecase Aradsss as "Arad***\n---\nDuplicado"
+usecase Oradeas as "Oradea*\n---\nDuplicado"
+usecase Mehadia as "Mehadia\n---\nX"
+(Arad) -- (Timisoara)
+(Arad) -- (Sibiu)
+(Arad) -- (Zerind)
+(Timisoara) -- (Lugoj)
+(Timisoara) -- (Arads)
+(Sibiu) -- (RV)
+(Sibiu) -- (Fagaras)
+(Sibiu) -- (Aradss)
+(Sibiu) -- (Oradea)
+(Zerind) -- (Aradsss)
+(Zerind) -- (Oradeas)
+(Lugoj) -- (Mehadia)
+(Lugoj) -- (Timisoara*)
+(RV) -- (Craiova)
+(RV) -- (Pitesti)
+(RV) -- (Sibiu*)
+(Fagaras) -- (Bucharest)
+(Fagaras) -- (Sibiu**)
+(Oradea) -- (Sibiu***)
+(Oradea) -- (Zerind*)
+(Mehadia) -- (Dobreta)
+(Mehadia) -- (Lugoj*)
+
+newpage
+
+(Rimnicu Vilcea) as (RV)
+usecase Arad as "Arad\n---\nX"
+usecase Timisoara as "Timisoara\n---\nX"
+usecase Sibiu as "Sibiu\n---\nX"
+usecase Zerind as "Zerind\n---\nX"
+usecase Lugoj as "Lugoj\n---\nX"
+usecase Arads as "Arad*\n---\nDuplicado"
+usecase RV as "Rimnicu Vilcea\n---\nX"
+usecase Fagaras as "Fagaras\n---\nX"
+usecase Aradss as "Arad**\n---\nDuplicado"
+usecase Oradea as "Oradea\n---\nX"
+usecase Aradsss as "Arad***\n---\nDuplicado"
+usecase Oradeas as "Oradea*\n---\nDuplicado"
+usecase Mehadia as "Mehadia\n---\nX"
+usecase Timisoaras as "Timisoara*\n---\nDuplicado"
+(Arad) -- (Timisoara)
+(Arad) -- (Sibiu)
+(Arad) -- (Zerind)
+(Timisoara) -- (Lugoj)
+(Timisoara) -- (Arads)
+(Sibiu) -- (RV)
+(Sibiu) -- (Fagaras)
+(Sibiu) -- (Aradss)
+(Sibiu) -- (Oradea)
+(Zerind) -- (Aradsss)
+(Zerind) -- (Oradeas)
+(Lugoj) -- (Mehadia)
+(Lugoj) -- (Timisoaras)
+(RV) -- (Craiova)
+(RV) -- (Pitesti)
+(RV) -- (Sibiu*)
+(Fagaras) -- (Bucharest)
+(Fagaras) -- (Sibiu**)
+(Oradea) -- (Sibiu***)
+(Oradea) -- (Zerind*)
+(Mehadia) -- (Dobreta)
+(Mehadia) -- (Lugoj*)
+
+newpage
+
+(Rimnicu Vilcea) as (RV)
+usecase Arad as "Arad\n---\nX"
+usecase Timisoara as "Timisoara\n---\nX"
+usecase Sibiu as "Sibiu\n---\nX"
+usecase Zerind as "Zerind\n---\nX"
+usecase Lugoj as "Lugoj\n---\nX"
+usecase Arads as "Arad*\n---\nDuplicado"
+usecase RV as "Rimnicu Vilcea\n---\nX"
+usecase Fagaras as "Fagaras\n---\nX"
+usecase Aradss as "Arad**\n---\nDuplicado"
+usecase Oradea as "Oradea\n---\nX"
+usecase Aradsss as "Arad***\n---\nDuplicado"
+usecase Oradeas as "Oradea*\n---\nDuplicado"
+usecase Mehadia as "Mehadia\n---\nX"
+usecase Timisoaras as "Timisoara*\n---\nDuplicado"
+usecase Craiova as "Craiova\n---\nX"
+(Arad) -- (Timisoara)
+(Arad) -- (Sibiu)
+(Arad) -- (Zerind)
+(Timisoara) -- (Lugoj)
+(Timisoara) -- (Arads)
+(Sibiu) -- (RV)
+(Sibiu) -- (Fagaras)
+(Sibiu) -- (Aradss)
+(Sibiu) -- (Oradea)
+(Zerind) -- (Aradsss)
+(Zerind) -- (Oradeas)
+(Lugoj) -- (Mehadia)
+(Lugoj) -- (Timisoaras)
+(RV) -- (Craiova)
+(RV) -- (Pitesti)
+(RV) -- (Sibiu*)
+(Fagaras) -- (Bucharest)
+(Fagaras) -- (Sibiu**)
+(Oradea) -- (Sibiu***)
+(Oradea) -- (Zerind*)
+(Mehadia) -- (Dobreta)
+(Mehadia) -- (Lugoj*)
+(Craiova) -- (Dobreta*)
+(Craiova) -- (Pitesti*)
+
+newpage
+
+(Rimnicu Vilcea) as (RV)
+(Rimnicu Vilcea*) as (RVs)
+usecase Arad as "Arad\n---\nX"
+usecase Timisoara as "Timisoara\n---\nX"
+usecase Sibiu as "Sibiu\n---\nX"
+usecase Zerind as "Zerind\n---\nX"
+usecase Lugoj as "Lugoj\n---\nX"
+usecase Arads as "Arad*\n---\nDuplicado"
+usecase RV as "Rimnicu Vilcea\n---\nX"
+usecase Fagaras as "Fagaras\n---\nX"
+usecase Aradss as "Arad**\n---\nDuplicado"
+usecase Oradea as "Oradea\n---\nX"
+usecase Aradsss as "Arad***\n---\nDuplicado"
+usecase Oradeas as "Oradea*\n---\nDuplicado"
+usecase Mehadia as "Mehadia\n---\nX"
+usecase Timisoaras as "Timisoara*\n---\nDuplicado"
+usecase Craiova as "Craiova\n---\nX"
+usecase Pitesti as "Pitesti\n---\nX"
+(Arad) -- (Timisoara)
+(Arad) -- (Sibiu)
+(Arad) -- (Zerind)
+(Timisoara) -- (Lugoj)
+(Timisoara) -- (Arads)
+(Sibiu) -- (RV)
+(Sibiu) -- (Fagaras)
+(Sibiu) -- (Aradss)
+(Sibiu) -- (Oradea)
+(Zerind) -- (Aradsss)
+(Zerind) -- (Oradeas)
+(Lugoj) -- (Mehadia)
+(Lugoj) -- (Timisoaras)
+(RV) -- (Craiova)
+(RV) -- (Pitesti)
+(RV) -- (Sibiu*)
+(Fagaras) -- (Bucharest)
+(Fagaras) -- (Sibiu**)
+(Oradea) -- (Sibiu***)
+(Oradea) -- (Zerind*)
+(Mehadia) -- (Dobreta)
+(Mehadia) -- (Lugoj*)
+(Craiova) -- (Dobreta*)
+(Craiova) -- (Pitesti*)
+(Pitesti) -- (Craiova*)
+(Pitesti) -- (Bucharest*)
+(Pitesti) -- (RVs)
+
+newpage
+
+(Rimnicu Vilcea) as (RV)
+(Rimnicu Vilcea*) as (RVs)
+usecase Arad as "Arad\n---\nX"
+usecase Timisoara as "Timisoara\n---\nX"
+usecase Sibiu as "Sibiu\n---\nX"
+usecase Zerind as "Zerind\n---\nX"
+usecase Lugoj as "Lugoj\n---\nX"
+usecase Arads as "Arad*\n---\nDuplicado"
+usecase RV as "Rimnicu Vilcea\n---\nX"
+usecase Fagaras as "Fagaras\n---\nX"
+usecase Aradss as "Arad**\n---\nDuplicado"
+usecase Oradea as "Oradea\n---\nX"
+usecase Aradsss as "Arad***\n---\nDuplicado"
+usecase Oradeas as "Oradea*\n---\nDuplicado"
+usecase Mehadia as "Mehadia\n---\nX"
+usecase Timisoaras as "Timisoara*\n---\nDuplicado"
+usecase Craiova as "Craiova\n---\nX"
+usecase Pitesti as "Pitesti\n---\nX"
+usecase Sibius as "Sibiu*\n---\nDuplicado"
+(Arad) -- (Timisoara)
+(Arad) -- (Sibiu)
+(Arad) -- (Zerind)
+(Timisoara) -- (Lugoj)
+(Timisoara) -- (Arads)
+(Sibiu) -- (RV)
+(Sibiu) -- (Fagaras)
+(Sibiu) -- (Aradss)
+(Sibiu) -- (Oradea)
+(Zerind) -- (Aradsss)
+(Zerind) -- (Oradeas)
+(Lugoj) -- (Mehadia)
+(Lugoj) -- (Timisoaras)
+(RV) -- (Craiova)
+(RV) -- (Pitesti)
+(RV) -- (Sibius)
+(Fagaras) -- (Bucharest)
+(Fagaras) -- (Sibiu**)
+(Oradea) -- (Sibiu***)
+(Oradea) -- (Zerind*)
+(Mehadia) -- (Dobreta)
+(Mehadia) -- (Lugoj*)
+(Craiova) -- (Dobreta*)
+(Craiova) -- (Pitesti*)
+(Pitesti) -- (Craiova*)
+(Pitesti) -- (Bucharest*)
+(Pitesti) -- (RVs)
+
+newpage
+
+(Rimnicu Vilcea) as (RV)
+(Rimnicu Vilcea*) as (RVs)
+usecase Arad as "Arad\n---\nX"
+usecase Timisoara as "Timisoara\n---\nX"
+usecase Sibiu as "Sibiu\n---\nX"
+usecase Zerind as "Zerind\n---\nX"
+usecase Lugoj as "Lugoj\n---\nX"
+usecase Arads as "Arad*\n---\nDuplicado"
+usecase RV as "Rimnicu Vilcea\n---\nX"
+usecase Fagaras as "Fagaras\n---\nX"
+usecase Aradss as "Arad**\n---\nDuplicado"
+usecase Oradea as "Oradea\n---\nX"
+usecase Aradsss as "Arad***\n---\nDuplicado"
+usecase Oradeas as "Oradea*\n---\nDuplicado"
+usecase Mehadia as "Mehadia\n---\nX"
+usecase Timisoaras as "Timisoara*\n---\nDuplicado"
+usecase Craiova as "Craiova\n---\nX"
+usecase Pitesti as "Pitesti\n---\nX"
+usecase Sibius as "Sibiu*\n---\nDuplicado"
+usecase Bucharest as "Bucharest\n---\nNodo Objetivo"
+(Arad) -- (Timisoara)
+(Arad) -- (Sibiu)
+(Arad) -- (Zerind)
+(Timisoara) -- (Lugoj)
+(Timisoara) -- (Arads)
+(Sibiu) -- (RV)
+(Sibiu) -- (Fagaras)
+(Sibiu) -- (Aradss)
+(Sibiu) -- (Oradea)
+(Zerind) -- (Aradsss)
+(Zerind) -- (Oradeas)
+(Lugoj) -- (Mehadia)
+(Lugoj) -- (Timisoaras)
+(RV) -- (Craiova)
+(RV) -- (Pitesti)
+(RV) -- (Sibius)
+(Fagaras) -- (Bucharest)
+(Fagaras) -- (Sibiu**)
+(Oradea) -- (Sibiu***)
+(Oradea) -- (Zerind*)
+(Mehadia) -- (Dobreta)
+(Mehadia) -- (Lugoj*)
+(Craiova) -- (Dobreta*)
+(Craiova) -- (Pitesti*)
+(Pitesti) -- (Craiova*)
+(Pitesti) -- (Bucharest*)
+(Pitesti) -- (RVs)
+
+@enduml
