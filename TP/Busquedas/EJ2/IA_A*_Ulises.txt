@@ -1,0 +1,88 @@
+@startuml A*.png
+(Lugoj) -- (Timisoara): g=111
+(Lugoj) -- (Mehadia): g=70
+note left of (Lugoj): h=244
+note left of (Timisoara): h=329\nf=440
+note left of (Mehadia): h=311\nf=311
+
+newpage
+
+usecase Lugojs as "Lugoj*\n---\nDuplicado"
+(Lugoj) -- (Timisoara): g=111
+(Lugoj) -- (Mehadia): g=70
+note left of (Lugoj): h=244
+note left of (Timisoara): h=329\nf=440
+note left of (Mehadia): h=241\nf=314
+(Mehadia) -- (Lugojs)
+(Mehadia) -- (Dobreta): g=75
+note left of (Dobreta): h=241\nf=317
+
+newpage
+
+usecase Lugojs as "Lugoj*\n---\nDuplicado"
+usecase Mehadias as "Mehadia*\n---\nDuplicado"
+(Lugoj) -- (Timisoara): g=111
+(Lugoj) -- (Mehadia): g=70
+note left of (Lugoj): h=244
+note left of (Timisoara): h=329\nf=440
+note left of (Mehadia): h=241\nf=314
+(Mehadia) -- (Lugojs): g=70
+(Mehadia) -- (Dobreta): g=75
+note left of (Dobreta): h=241\nf=317
+(Dobreta) -- (Mehadias)
+(Dobreta) -- (Craiova): g=120
+note left of (Craiova): h=160\nf=180
+
+newpage
+
+(Rimnicu Vilcea) as (RV)
+usecase Lugojs as "Lugoj*\n---\nDuplicado"
+usecase Mehadias as "Mehadia*\n---\nDuplicado"
+usecase Dobretas as "Dobreta*\n---\nDuplicado"
+(Lugoj) -- (Timisoara): g=111
+(Lugoj) -- (Mehadia): g=70
+note left of (Lugoj): h=244
+note left of (Timisoara): h=329\nf=440
+note left of (Mehadia): h=241\nf=314
+(Mehadia) -- (Lugojs): g=70
+(Mehadia) -- (Dobreta): g=75
+note left of (Dobreta): h=241\nf=317
+(Dobreta) -- (Mehadias)
+(Dobreta) -- (Craiova): g=120
+note left of (Craiova): h=160\nf=180
+(Craiova) -- (Dobretas)
+(Craiova) -- (RV): g=146
+(Craiova) -- (Pitesti): g=138
+note right of RV: h=193\nf=339
+note right of Pitesti: h=98\nf=236
+
+newpage
+
+(Rimnicu Vilcea) as (RV)
+(Rimnicu Vilcea*) as (RVs)
+usecase Lugojs as "Lugoj*\n---\nDuplicado"
+usecase Mehadias as "Mehadia*\n---\nDuplicado"
+usecase Dobretas as "Dobreta*\n---\nDuplicado"
+usecase RVs as "Rimnicu Vilcea*\n---\nDuplicado"
+usecase Bucharest as "Bucharest\n---\nNodo Objetivo"
+(Lugoj) -- (Timisoara): g=111
+(Lugoj) -- (Mehadia): g=70
+note left of (Lugoj): h=244
+note left of (Timisoara): h=329\nf=440
+note left of (Mehadia): h=241\nf=314
+(Mehadia) -- (Lugojs): g=70
+(Mehadia) -- (Dobreta): g=75
+note left of (Dobreta): h=241\nf=317
+(Dobreta) -- (Mehadias)
+(Dobreta) -- (Craiova): g=120
+note left of (Craiova): h=160\nf=180
+(Craiova) -- (Dobretas)
+(Craiova) -- (RV): g=146
+(Craiova) -- (Pitesti): g=138
+note right of RV: h=193\nf=339
+note right of Pitesti: h=98\nf=236
+(Pitesti) -- (RVs)
+(Pitesti) -- (Bucharest): g=101
+note right of Bucharest: h=0\nf=101
+
+@enduml
