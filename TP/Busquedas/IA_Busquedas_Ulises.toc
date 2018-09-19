@@ -1,0 +1,4 @@
+\contentsline {section}{\numberline {1}Ejercicio 1}{1}
+\contentsline {section}{\numberline {2}Ejercicio 2}{2}
+\contentsline {subsection}{\numberline {2.1}Primero en Profundidad}{3}
+\contentsline {subsection}{\numberline {2.2}Primero en Amplitud}{8}
