@@ -30,6 +30,18 @@ Para el corriente documento se est\'a llevando un versionado a fin de mantener u
 
 % === Inicio del Cuerpo del Documento === %
 \pagenumbering{arabic}
+\section{Actividad 1}
+\textsc{Consigna}: \textbf{En una funci\'on heur\'istica:\\$f'(n)=g(n)+h'(n)$\\?`Qu\'e se eval\'ua en el nodo $n$? ?`Qu\'e representa $g(n)$?}
+\subsection{?`Qu\'e se evalua en el nodo $n$?}
+Como se menciona en \cite{russel}, la funcion $f'(n)=g(n)+h'(n)$ representar\'ia el \textit{camino mas barato para llegar al objetivo desde el nodo \textbf{n}}. Entonces, una respuesta sencilla a esta pregunta es que se estar\'ia evaluando la mejor ruta ``aparente'' para llegar al nodo objetivo estando parado en el nodo \textbf{n}.
+\subsection{?`Qu\'e representa $g(n)$?}
+\cite{russel} postula lo siguiente: \textit{$g(n)$ da el coste de ir desde el nodo inicio hasta el nodo \textbf{n}}. Tomando como ejemplo la \texttt{Figura \ref{gra:g1}}, supongamos que estamos parados en el nodo $A$, entonces si queremos avanzar al nodo $B$ los datos serian los siguientes:\\
+\begin{itemize}
+\item \textit{Nodo inicio}: $A$
+\item \textit{Nodo \textbf{n}}: $B$
+\item \textit{Coste de $A$ a $B$ = $g(n)$}: 11
+\end{itemize}
+
 \section{Ejercicio 1}
 \label{sec:ej1}
 \textsc{Consigna}: \textbf{Trace como opera la b\'usqueda A* aplicada al problema de alcanzar Bucarest desde Lugoj utilizando la heur\'istica distancia en l\'inea recta. Es decir, muestre la secuencia de nodos que considerará el algoritmo y los valores de f, g, y h para cada nodo.}\\
@@ -259,4 +271,11 @@ A continuaci\'on se proveeran las im\'agenes para el paso a paso del algoritmo A
   \caption{D\'ecimo quinto paso para el Algoritmo Primero en Amplitud}
   \label{gr:g28}
 \end{figure}
+% === Bibliografia ===%
+\newpage
+\begin{thebibliography}{99}
+	% Item 1
+	\bibitem[Russel y Norvig, 2004]{russel}
+	\newblock \textsc{Russel, S. J.; Norvig, P.} \textit{Inteligencia Artificial, Un Enfoque Moderno}. Pearson Educaci\'on, S.A., Madrid, 2004, \textsc{ISBN: 84-205-4003-x}
+\end{thebibliography}
 \end{document}
