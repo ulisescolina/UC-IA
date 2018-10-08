@@ -1,0 +1,293 @@
+\documentclass{article}
+\renewcommand\refname{Referencias}
+\renewcommand\contentsname{\'Indice de Conten\'ido}
+\usepackage{graphicx}
+\graphicspath{{IMG/}}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{booktabs}
+\usepackage{amsmath}
+
+
+\title{\textsc{Inteligencia Artificial y Sistemas Expertos}\\Probabilidad
+Condicionada}
+\author{Ulises C. Ramirez}
+\date{8 de Octubre, 2018}
+\begin{document}
+\maketitle
+\pagenumbering{gobble}
+\newpage
+\section*{Versionado}
+Para el corriente documento se est\'a llevando un versionado a fin de mantener un respaldo del trabajo y adem\'as proveer a la c\'atedra o a cualquier interesado la posibilidad de leer el material en la \'ultima versi\'on disponible.\\
+
+\begin{center}
+  \textsc{Repositorio}: \textit{https://github.com/ulisescolina/UC-IA/}
+\end{center}
+
+\hfill--\textsc{Ulises}
+\pagenumbering{gobble}
+\newpage
+
+% === Inicio del Cuerpo del Documento === %
+\pagenumbering{arabic}
+\section*{Probabilidad Condicionada}
+En este documento se provee un ejemplo de la aplicaci\'on de lo visto en
+clase a un ejemplo inventado por el alumno tomando como base el ejemplo
+prove\'ido por la c\'atedra \cite{sebpia2018}.
+
+\subsection*{Definici\'on del escenario}
+Se ha recibido una embarcacion con contenedores que poseen placas madre para
+ordenadores, en total la cantidad de \textit{items} que se tienen es de
+123456, luego de un an\'alisis del inventario se encontr\'o que los
+items pertenecian a las marcas \texttt{M1}, \texttt{M2}, \texttt{M3} y
+\texttt{M4}. Otra de las cuestiones que fueron de inter\'es en el an\'alisis
+del cargamento es determinar con que \textit{features} dentro del abanico
+de car\'acteristicas de placas madre contaba cada placa, se encontraron las
+siguientes \texttt{C1}, \texttt{C2} y \texttt{C3}.
+
+Se debe poder determinar lo siguiente:
+\begin{enumerate}
+\item Probabilidad a priori de cada \texttt{Marca} si se presenta un item al
+azar
+\item La probabilidad que se presente una \texttt{Marca} sabiendo que el
+\texttt{item} tiene todos los \textit{features}.
+\end{enumerate}
+
+Se tiene que la cantidad de placas seg\'un cada fabricante es la siguiente:
+\begin{center}
+$Total=18800$\\
+$M1 = 3500$\\
+$M2 = 5500$\\
+$M3 = 2500$\\
+$M4 = 7300$\\
+\end{center}
+
+\begin{table}[ht]
+\caption{Datos tabulados para el contenido recibido}
+\centering
+\begin{tabular}{c | c c c }
+\hline
+		& \texttt{C1} & \texttt{C2} & \texttt{C3} \\ \hline
+\texttt{M1} 	&     3130   &      502    &     1244     \\
+\texttt{M2} 	&     2325   &      5351    &     124     \\
+\texttt{M3} 	&     273   &      2312    &     14     \\
+\texttt{M4} 	&     135   &      7281    &     4214  \\ \hline
+\end{tabular}
+\label{tab:datoscontenido}
+\end{table}
+
+\subsection*{Probabilidades para $M_{i}$}
+Para realizar \'estos c\'alculos se realizar\'a la operaci\'on presentada en
+la ecuaci\'on \ref{eq1}
+
+\begin{equation} \label{eq1}
+	P(M_{i}) = \frac{\#M_{i}}{Total}
+\end{equation}
+
+A continuaci\'on, en los \texttt{Desarrollos \ref{des1}, \ref{des2}, \ref{des3}} y
+\texttt{\ref{des4}} se exponen los diferentes resultados obtenidos del c\'alculo
+de probabilidades a priori para $M_{i}$
+
+\begin{equation} \label{des1}
+\begin{split}
+ P(M_{1}) & =  \frac{3500}{18800} \\
+ & = 0,186170
+\end{split}
+\end{equation}
+
+\begin{equation} \label{des2}
+\begin{split}
+ P(M_{2}) & =  \frac{5500}{18800} \\
+ & = 0,292553
+\end{split}
+\end{equation}
+
+\begin{equation} \label{des3}
+\begin{split}
+ P(M_{3}) & =  \frac{2500}{18800} \\
+ & = 0,132978
+\end{split}
+\end{equation}
+
+\begin{equation} \label{des4}
+\begin{split}
+ P(M_{4}) & =  \frac{7300}{18800} \\
+ & = 0,388297
+\end{split}
+\end{equation}
+
+\subsection*{Probabilidades para \texttt{$C_{i}$}}
+En esta secci\'on se presenta el c\'alculo realizado para poder definir las
+diferentes probabilidades a priori de encontrar la caracter\'istica $C_{i}$ en el total
+de placas madre y lo adjuntamos a la \texttt{Tabla \ref{tab:datoscontenido}},
+estas probabilidades est\'an adheridas a la \texttt{Tabla \ref{tab:probci}}.
+
+El c\'alculo para las probabilidades a priori para las  caracter\'isticas las
+podemos calcular seg\'un \cite{sebpia2018}, como presenta la ecuaci\'on
+\ref{eq6}
+
+\begin{equation} \label{eq6}
+P(C_{i})=\sum_{j=1}^{N}P(M_{i})P(C_{i}|M_{j})
+\end{equation}
+
+Siendo $N$ la cantidad de, en este caso, \texttt{marcas} se tenga en el
+inventario, para nuestro caso particular se tiene que $N=4$
+
+Otra forma de verlo, es la siguiente
+
+\begin{equation} \label{eq7}
+P(C_{i})=\frac{\sum_{j=1}^{N} \#C_{i}\text{ en }M_{j}}{\#Total}
+\end{equation}
+
+conceptualmente, lo que expresa la ecuaci\'on \ref{eq7} es que se deben sumar
+los cardinales para cada columna y este resultado dividirlo por el total de
+items.
+
+Los calculos para las probabilidades de $C_{i}$ se encuentran en los
+\texttt{Desarrollos \ref{des5}, \ref{des6}} y \texttt{\ref{des7}}
+
+\begin{equation} \label{des5}
+\begin{split}
+ P(C_{1}) & =  \frac{3130 + 2325 + 273 + 135}{18800} \\
+ & = 0,311861
+\end{split}
+\end{equation}
+
+\begin{equation} \label{des6}
+\begin{split}
+ P(C_{2}) & =  \frac{502 + 5351 + 2312 + 7281}{18800} \\
+ & = 0,821595
+\end{split}
+\end{equation}
+
+\begin{equation} \label{des7}
+\begin{split}
+ P(C_{3}) & =  \frac{1244 + 124 + 14 + 4214}{18800} \\
+ & = 0,297659
+\end{split}
+\end{equation}
+
+\begin{table}[ht]
+\caption{Probabilidades para $C_{i}$}
+\centering
+\begin{tabular}{c | c c c }
+\hline
+		& \texttt{C1} & \texttt{C2} & \texttt{C3} \\ \hline
+\texttt{M1} 	&     3130   &      502    &     1244     \\
+\texttt{M2} 	&     2325   &      5351    &     124     \\
+\texttt{M3} 	&     273   &      2312    &     14     \\
+\texttt{M4} 	&     135   &      7281    &     4214  \\ \hline
+Probabilidad	& 0,311861	& 0,821595	& 0,297659	\\
+\hline
+\end{tabular}
+\label{tab:probci}
+\end{table}
+
+\subsection*{C\'alculo de verosimilitudes}
+Luego de este c\'alculo se tendr\'a una nueva tabla la cual representar\'a la
+verosimilitud de cada caracter\'istica $C_{j}$ dada una marca $M_{i}$, para
+realizar el c\'alculo se procede a realizar lo siguiente
+
+\begin{equation} \label{eq8}
+P(C_{j}|M_{i})=\frac{\#C_{j}}{\#M_{i}}
+\end{equation}
+
+Esto es, la cardinalidad de un $C_{j}$ sobre la cardinalidad de un $M_{i}$. A
+continuaci\'on se presenta la tabla nueva de la que se habl\'o.
+
+\begin{table}[ht]
+\caption{Verosimilitudes}
+\centering
+\begin{tabular}{c | c c c }
+\hline
+		& \texttt{C1} & \texttt{C2} & \texttt{C3} \\ \hline
+\texttt{M1} 	&     0,894285   &   0,143428    &     0,355428     \\
+\texttt{M2} 	&     0,422727   &   0,972909    &     0,022545     \\
+\texttt{M3} 	&     0,109200   &   0,924800    &     0,005600     \\
+\texttt{M4} 	&     0,018493   &   0,997397    &     0,577260     \\ \hline
+\end{tabular}
+\label{tab:verosimilitudes}
+\end{table}
+
+\subsection*{C\'alculo de probabilidades condicionales}
+Este se llevar\'a a cabo mediante la siguiente ecuaci\'on:
+
+\begin{equation} \label{eq8}
+P(M_{i}|C_{1}, C_{2}, \cdots,
+C_{j})=P(M_{i})\prod_{j=1}^{N}P(C_{j}|M_{i})
+\end{equation}
+
+La ecuaci\'on \ref{eq8} se puede interpretar conceptualmente como, la
+probabilidad de que ocurra que se seleccione la marca $M_{i}$ dado a que esta
+marca cuente con los features $C_{1}$, $C_{2}$,\cdots,$C_{j}$.
+
+\begin{equation} \label{des8}
+\begin{split}
+P(M_{1}|C_{1}, C_{2}, C_{3}) & =
+0,186170\cdot0,894285\cdot0,143428\cdot0,355428 \\
+& = 0,008487
+\end{split}
+\end{equation}
+
+\begin{equation} \label{des9}
+\begin{split}
+P(M_{2}|C_{1}, C_{2}, C_{3}) & =
+0,292553\cdot0,422727\cdot0,972909\cdot0,022545 \\
+& = 0,002712
+\end{split}
+\end{equation}
+
+\begin{equation} \label{des10}
+\begin{split}
+P(M_{3}|C_{1}, C_{2}, C_{3}) & =
+0,132978\cdot0,109200\cdot0,924800\cdot0,005600 \\
+& = 0,000075
+\end{split}
+\end{equation}
+
+\begin{equation} \label{des11}
+\begin{split}
+P(M_{4}|C_{1}, C_{2}, C_{3}) & =
+0,388297\cdot0,018443\cdot0,997397\cdot0,577260 \\
+& = 0,004123
+\end{split}
+\end{equation}
+
+Ahora si realizamos la sumatoria de todos los resultados obtenidos
+anteriormente, tendremos que, $\sum_{i=1}^{N=4}P(M_{i}|C_{1, 2, 3})=0,015397$
+esto es un indicio de que la normalizaci\'on es necesaria en el ejercicio, para
+esto, procedemos a dividir a cada resultado de $P(M_{i}|C_{1, 2, 3})$ por la
+suma obtenida anteriormente.
+
+Finalizamos entonces con lo siguiente:
+
+\begin{equation} \label{des12}
+\frac{P(M_{1}|C_{1}, C_{2}, C_{3})}{0,015397} & =  0,551211\\
+\end{equation}
+
+\begin{equation} \label{des13}
+\frac{P(M_{2}|C_{1}, C_{2}, C_{3})}{0,015397} & =  0,176138\\
+\end{equation}
+
+\begin{equation} \label{des14}
+\frac{P(M_{3}|C_{1}, C_{2}, C_{3})}{0,015397} & =  0,004871\\
+\end{equation}
+
+\begin{equation} \label{des15}
+\frac{P(M_{4}|C_{1}, C_{2}, C_{3})}{0,015397} & =  0,267779\\
+\end{equation}
+
+La sumatoria de estos nuevos valores normalizados es de $0,999999$, lo cual
+basicamente tiende a 1, es decir, el 100\%, el resultado que se aprecia es
+consecuencia de lo conocido como \textit{error de truncamiento}.
+
+% === Bilbiografia === %
+\newpage
+\begin{thebibliography}{99}
+	% Item 1
+	\bibitem[IA y SE - 2018]{sebpia2018}\textsc{Inteligencia Artificial y
+Sistemas Expertos}.
+\textit{Sistemas Basados en Probabilidades - Ejemplo. Clase 7}.
+\end{thebibliography}
+\end{document}

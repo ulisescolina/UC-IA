@@ -1,0 +1,229 @@
+\documentclass{article}
+\renewcommand\refname{Referencias}
+\renewcommand\contentsname{\'Indice de Conten\'ido}
+\usepackage{graphicx}
+\graphicspath{{IMG/}}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{float}
+
+\title{\textsc{Inteligencia Artificial\\Sistemas Expertos y Modelos de Redes
+Probabil\'isticos}}
+\author{Ulises C. Ramirez}
+\date{01 de Octubre, 2018}
+\begin{document}
+\maketitle
+\pagenumbering{gobble}
+\newpage
+\section*{Versionado}
+Para el corriente documento se est\'a llevando un versionado a fin de mantener
+un respaldo del trabajo y adem\'as proveer a la c\'atedra o a cualquier interesado
+la posibilidad de leer el material en la \'ultima versi\'on disponible.\\
+
+\begin{center}
+  \textsc{Repositorio}: \textit{https://github.com/ulisescolina/UC-IA}
+\end{center}
+
+\hfill--\textsc{Ulises}
+
+\tableofcontents
+\pagenumbering{gobble}
+\newpage
+
+% === Inicio del Cuerpo del Documento === %
+\pagenumbering{arabic}
+\section{¿Qu\'e es un sistema experto?}
+\label{sec:sysex}
+Seg\'un \cite{castillo} y adem\'as la presentaci\'on de la c\'atedra
+\cite{iase2018}, los cuales citan un estudio publicado por [Stevens, 1984]
+un Sistema Experto, \textit{es una entidad que tiene la
+facultad de pensar y razonar como lo haria alguien con conocimiento en un
+\'area en concreto}, adem\'as se puede agregar que este debe, continuamente
+estar relacion\'andose con los datos que conoce y realizando
+modificaciones en los mismos a fin de producir resultados con mas significado
+para los que reciban la informaci\'on. Las mismas fuente provee un ejemplo que es el de un Sistema
+Experto para diagn\'ostico medico, este podr\'ia tomar datos relevantes del
+caso, realizar una comparacion con el conocimiento que tiene alojado en la base
+de datos y dar un diagn\'ostico.
+
+\cite{castillo} adem\'as ofrece su propia definici\'on de qu\'e es un sistema
+experto: \textit{Un Sistem Experto puede definirse como un sistema
+inform\'atico (hardware y software) que simula a los expertos humanos en un
+\'area de especializaci\'on dada}
+
+Se pueden hablar de caracter\'isticas generales de los Sistemas Expertos, estas
+se mencionan a continuaci\'on:
+\begin{itemize}
+\item Procesr y memorizar informaci\'on.
+\item Razonar ante situaciones, ya sea en las cuales este t\'enga experiencia o
+que a\'un no se le hayan presentado.
+\item Comunicaci\'on con el ser humano y/u otros sistemas expertos.
+\end{itemize}
+
+
+\section{¿Qu\'e tipos de sistemas expertos existen}
+\label{sec:sysext}
+En la misma fuente que habla acerca de las cuestiones tratadas en la
+\texttt{Secci\'on \ref{sec:sysex}}, se presenta una clasificaci\'on de sistemas
+expertos, se asume que esta clasificaci\'on es a lo que se hace referencia
+cuando se habla de ``tipos de sistemas expertos''.\\
+
+Clasificaci\'on de Sistemas Expertos:
+\begin{itemize}
+\item Sistemas Expertos basados en Reglas.
+\item Sistemas Expertos basados en Probabilidades o Est\'ocasticos.
+\item Sistemas Expertos Difusos.
+\end{itemize}
+
+Aunque, como menciona \cite{castillo}, un sistema experto se puede clasificar
+en dos tipos principales seg\'un la naturaleza de problemas para los que
+est\'an diseñados: deterministas y estoc\'asticos.\\
+
+Se decide, optar por lo segundo, e ir con lo que menciona Castillo, y decir que
+los tipos de sistemas expertos existentes son \textit{deterministas} y
+\textit{estoc\'asticos}.
+
+
+\section{Componentes y tareas}
+\label{sec:sysextcomponentesytareas}
+\textsc{Consigna}: \textbf{¿Cu\'ales son los componentes de un sistema experto
+y que tareas realiza cada uno de ellos?}\\
+
+Los componentes de un sistema experto seg\'un se detalla en \cite{castillo} se
+explican a continuaci\'on.
+
+\subsection{La Componente Humana}
+\label{sub:comphum}
+Hace referencia a la relacion existente entre \textit{expertos humanos
+especialistas en el tema de estudio} y los \textit{ingenieros del
+conocimiento}. La tarea que realiza esta componente es el suministrar el
+conocimiento b\'asico en el tema de interes y trasladarlo a un lenguaje que
+pueda ser entendido por el sistema experto.
+
+\subsection{La Base del Conocimiento}
+\label{sub:basecon}
+\'Esta es presentada a los ingenieros del conocimiento como una base ordenada y
+estructurada, y un conjunto de relaciones bien definidas y explicadas. Esta
+base busca la permanencia dentro de la memoria de un sistema experto, no ser
+efimero como lo son los datos. Este conocimiento entonces se basa en
+afirmaciones de validez general, tales como reglas, distribuciones de
+probabilidad, etc.
+
+
+\subsection{Subsistema de Adquisici\'on de Conocimiento}
+\label{sub:adqcono}
+Este controla el flujo del nuevo conocimiento que va desde el experto humano a
+la base de datos. El sistema experto se encarga de determinar que nuevo
+conocimiento se necesita, si lo que se recibe es nuevo, y se encarga de
+incorporarlo.
+
+\subsection{Control de la Coherencia}
+Este controla la consistencia de la base de datos y evita que unidades de
+conocimiento inconsistentes entren en la misma. Estas existen debido a que
+existe la posibilidad de que incluso un experto humano pueda formular
+afirmaciones inconsistentes con lo que ya existe, en caso de que no se cuente
+con un control de coherencia esta unidad contradictoria formulada por el humano
+puede llegar a formar parte de la base de datos. Adem\'as el sistema informa a
+expertos humanos las restriciones que debe cumplir la informaci\'on que \'estos
+provean para ser coherente on la base de conocimientos y asi asiste al ser
+humano a dar informaci\'on fiable.
+
+\subsection{El Motor de Inferencia}
+\label{sub:motorinf}
+La funci\'on principal de esta componente es el de obtener conclusiones
+aplicando el conocimiento a los datos. Estas conclusiones se pueden basar en
+\textit{conocimiento determinista} o \textit{conocimiento probabil\'istico}. Es
+responsable tambien de la propagacion de conocimiento incierto, esta
+propagacion de incertidumbre es uno de los eslabones m\'as d\'ebiles de un
+sistema experto.
+
+\subsection{El Subsistema de Adquisici\'on de Conocimiento}
+\label{sub:adqcono2}
+\begin{center}
+**Esto parece ser un error de tipeo dentro del libro**\\
+*** Repetido con la Secci\'on \ref{sub:adqcono} **
+\end{center}
+
+Este es utilizado por el motor de inferencia discutido en \texttt{Secci\'on
+\ref{sub:motorinf}} cuando el conocimiento inicial es muy limitado y no se
+pueden sacar conclusiones, el objetivo de esta relaci\'on es obtener conocimiento
+necesario y continuar con el proceso de inferencia hasta llegar a las conclusiones.
+
+\subsection{Interfase de Usuario}
+Este es el enlace entre el sistema experto y el usuario. Su proposito es dotar
+al sistema experto de mecanismos que permitan obtener y presentar informaci\'on
+de manera f\'acil y agradable, haciendo que el sistema experto en cuesti\'on
+sea una herramienta efectiva. Trabaja en relaci\'on cercana con lo presentado en
+la \texttt{Secci\'on \ref{sub:adqcono2}} ya que al no poder llegar a una
+inferencia por medio del Motor de Inferencia, este motor solicita la ayuda al
+Subsistema de adquisicion de conocimiento, que luego podr\'ia solicitar al
+usuario la informaci\'on necesaria, para realizar esta acci\'on es menester
+contar con una interfaz que comunique al usuario con el sistema experto.
+
+
+\subsection{El Subsistema de Ejecuci\'on de \'Ordenes}
+Esta es la componente que permite al  sistema experto iniciar acciones, las
+cuales se basan en las conclusiones a las que llega el Motor de Inferencia.
+
+\subsection{El Subsistema de Explicaci\'on}
+Este se encarga de presentar el proceso seguido por el motor de inferencia para
+llegar a la conclusi\'on, en muchos dominios de aplicaciones esto es totalmente
+necesario debido a los riesgos asociados con las acciones a ejecutar.
+
+\subsection{El subsistema de Aprendizaje}
+Dos caracter\'isticas  que resaltan de un sistema experto son:
+\begin{itemize}
+\item La capacidad de aprendizaje, y
+\item La capacidad de obtener experiencia a partir de datos disponibles
+\end{itemize}
+
+En cuanto al apredizaje, se puede diferenciar dos tipos: \textit{aprendizaje
+estructural} y \textit{aprendizaje par\'ametrico}.
+
+\textbf{Aprendizaje Estructural}: esto hace referencia a aspectos relacionados
+con la estructura del conocimiento (reglas, distribuciones de probabilidad,
+etc), la inclusi\'on de una nueva regla a la base del conocimiento es un
+ejemplo de aprendizaje estructural.\\
+
+\textbf{Aprendizaje Param\'etrico}: se refiere a la estimaci\'on de parametros
+necesarios para construir una base de conocimiento. Una estimaci\'on de
+probabilidad asociada a un s\'intoma o enfermedad es ejemplo de aprendizaje
+param\'etrico.\\
+
+En cuanto a la obtenci\'on de experiencia, los datos pueden ser obtenidos por
+expertos y no expertos y puede utilizarse por el subsistema de adquisici\'on de
+conocimiento y por el subsistema de aprendizaje.
+
+\section*{Recapitulaci\'on}
+De las componentes mencionadas, puede verse que los sistemas expertos pueden
+realizar varias tareas. Estas incluyen, pero no se limitan a, las
+siguientes:
+\begin{itemize}
+\item Adquisici\'on del conocimiento y la verificaci\'on de su coherencia; por
+lo que el sistema experto puede ayudar a los expertos humanos a dar
+conocimiento coherente.
+\item Memorizar conocimiento.
+\item Aprender de la base del conocimiento y de los datos disponibles.
+\item Realizar inferencia y razonamiento en situaciones deterministas y de
+incertidumbre.
+\item Explicar conclusiones o acciones tomadas.
+\item Comunicar con los expertos y no expertos y con otros sistemas
+expertos.
+\end{itemize}
+
+
+% === Bilbiografia === %
+\newpage
+\begin{thebibliography}{99}
+	% Item 1
+	\bibitem[Clase 5, IA - Sistemas Expertos ,
+2018]{iase2018}\textsc{C\'atedra: Inteligencia Artificial y Sistemas Expertos}.
+\textit{Presentacion: Clase5 - Sistemas Expertos}.
+	% Item
+	%\bibitem[Clase 6, IA - S]
+	% Item
+	\bibitem[Castillo, et al]{castillo}\textsc{Castillo, Enrique;
+Guti\'errez, Jos\'e Manuel; Hadi, Ali S.}. \textit{Sistemas Expertos y Modelos
+de Redes Probabil\'isticas}.
+\end{thebibliography}
+\end{document}
