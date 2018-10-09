@@ -1,0 +1,333 @@
+%----------------------------------------------------------------------------------------
+%	Paquetes y Temas/Colores
+%----------------------------------------------------------------------------------------
+
+\documentclass{beamer}
+
+\mode<presentation> {
+\usetheme{Madrid}
+%\setbeamertemplate{footline} % Remover el pie de pagina
+%\setbeamertemplate{footline}[page number] % Reemplazar el pie de pagina con un numero de pagina
+\setbeamertemplate{navigation symbols}{} % remover simbolos de navegacion
+}
+
+\usepackage{graphicx} % Permite la insercion de imagenes
+\usepackage{booktabs} % Permite la manipulacion de tablas
+\usepackage{amsmath} % Permite la manipulacion de ecuaciones
+
+%----------------------------------------------------------------------------------------
+%	Caratula
+%----------------------------------------------------------------------------------------
+
+\title[IAySE - 2018]{\textsc{Inteligencia Artificial y Sistemas
+Expertos}\\Probabilidad Condicionada\\--Ejemplo--} % Primero aparece en el pie de pagina (titulo corto),
+		   % el segundo aparece solo en la caratula (titulo largo)
+
+\author{\textsc{Ulises C. Ramirez}
+}
+\institute[UNaM -- FCEQyN] % Institucion
+{
+\texttt{\{ulir19, ulisescolrez\}@gmail.com}\\
+\medskip
+Universidad Nacional de Misiones\\Facultad de Ciencias Exactas, Qu\'imicas y
+Naturales \\ % Institucion para caratula
+}
+\date{8 de Octubre, 2018}
+
+\begin{document}
+
+\begin{frame}
+\titlepage % Caratula
+\end{frame}
+
+\begin{frame}
+\frametitle{Vista Preliminar} % Vistazo general de los temas
+\tableofcontents % Contenido, section{} y subsection{}
+\end{frame}
+
+%----------------------------------------------------------------------------------------
+%	Diapositivas
+%----------------------------------------------------------------------------------------
+
+%------------------------------------------------
+\section{Presentaci\'on del Problema}
+%------------------------------------------------
+\begin{frame}
+\frametitle{Inventario Placas Madre}
+Se ha recibido una embarcaci\'on con contenedores que poseen placas madre para
+ordenadores, en total la cantidad de items que se tienen es de 18800, luego de
+un análisis del inventario se encontró que los items pertenecían a las marcas
+M1, M2, M3 y M4. Otra de las cuestiones que fueron de interés en el análisis
+del cargamento fue determinar con que características dentro del abanico de carácteristicas
+de placas madre contaba cada item, se encontraron las siguientes
+características C1, C2 y C3.
+\end{frame}
+%------------------------------------------------
+\begin{frame}
+\frametitle{Inventario Placas Madre}
+Se ha recibido una embarcaci\'on con contenedores que poseen placas madre para
+ordenadores, en total la cantidad de items que se tienen es de \textbf{18800},
+luego de un análisis del inventario se encontró que los items pertenecían a las \textbf{marcas
+M1, M2, M3} y \textbf{M4}. Otra de las cuestiones que fueron de interés en el análisis
+del cargamento fue determinar con que \textbf{características} dentro del abanico de carácteristicas
+de placas madre contaba cada item, se encontraron las características
+\textbf{C1, C2} y \textbf{C3}.
+\end{frame}
+%------------------------------------------------
+\begin{frame}
+\frametitle{Datos de inter\'es}
+\end{frame}
+%------------------------------------------------
+\begin{frame}
+\frametitle{Datos de inter\'es}
+\begin{block}{Marcas}
+$M_{1}, M_{2}, M_{3}, M_{4}$
+\end{block}
+
+\end{frame}
+%------------------------------------------------
+\begin{frame}
+\frametitle{Datos de inter\'es}
+\begin{block}{Marcas}
+$M_{1}, M_{2}, M_{3}, M_{4}$
+\end{block}
+
+\begin{block}{Características}
+$C_{1}, C_{2}, C_{3}$
+\end{block}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Datos del Problema}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Datos del problema}
+\begin{center}
+\textsc{-- Cardinalidad de Marcas --}\\
+$Total=18800$ \\
+$M1=3500$	;	$M2=5500$\\
+$M3=2500$	;	$M4=7300$
+\end{center}
+\begin{table}[ht]
+\caption{Datos tabulados para el contenido recibido}
+\centering
+\begin{tabular}{c | c c c }
+\hline
+		& \texttt{C1} & \texttt{C2} & \texttt{C3} \\ \hline
+\texttt{M1} 	&     3130   &      502    &     1244     \\
+\texttt{M2} 	&     2325   &      5351    &     124     \\
+\texttt{M3} 	&     273   &      2312    &     14     \\
+\texttt{M4} 	&     135   &      7281    &     4214  \\ \hline
+\end{tabular}
+\label{tab:datoscontenido}
+\end{table}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Consignas}
+\begin{itemize}
+\item Encontrar la probabilidad de cada marca si se presenta un item al azar.
+\end{itemize}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Consignas}
+\begin{enumerate}
+\item Encontrar la probabilidad de cada marca si se presenta un item al azar.
+\item La probabilidad de que se presente una marca sabiendo que el item tiene
+todas las caracter\'isticas.
+\end{enumerate}
+\end{frame}
+
+%------------------------------------------------
+\section{Soluci\'on propuesta}
+%------------------------------------------------
+\begin{frame}
+\frametitle{Solucion a la consigna 1}
+\begin{itemize}
+\item La soluci\'on a esta consigna es sencilla, simplemente se solicita la
+probabilidad a priori de cada marca en el mont\'on de items.
+\end{itemize}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}
+\frametitle{Solucion a la consigna 1}
+\begin{itemize}
+\item La soluci\'on a esta consigna es sencilla, simplemente se solicita la
+probabilidad a priori de cada marca en el mont\'on de items.
+\item Para esto solo se necesita conocer lo siguiente
+\end{itemize}
+
+\begin{equation*} \label{eq1}
+	P(M_{i}) = \frac{\#M_{i}}{Total}
+\end{equation*}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Solucion a la consigna 1}
+\begin{itemize}
+\item La soluci\'on a esta consigna es sencilla, simplemente se solicita la
+probabilidad a priori de cada marca en el mont\'on de items.
+\item Para esto solo se necesita conocer lo siguiente
+\end{itemize}
+
+\begin{equation*} \label{eq1}
+	P(M_{i}) = \frac{\#M_{i}}{Total}
+\end{equation*}
+
+De esta forma se obtienen los valores para:\\
+$P(M_{1})=0,186170$, $P(M_{2})=0,292553$, $P(M_{3})=0,132978$,
+$P(M_{4})=0,388297$
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}
+\frametitle{Solucion a la consigna 2}
+\begin{itemize}
+\item Consignas estan relacionadas.
+\item Los datos obtenidos volveran a ser utilizados.
+\end{itemize}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Solucion a la consigna 2}
+Adelant\'andonos, lo que se va a necesitar hacer es lo siguiente:
+\begin{equation*} \label{eq8}
+P(M_{i}|C_{1}, C_{2}, \cdots,
+C_{j})=P(M_{i})\prod_{j=1}^{N}P(C_{j}|M_{i})
+\end{equation*}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Solucion a la consigna 2}
+Adelant\'andonos, lo que se va a necesitar hacer es lo siguiente:
+\begin{equation*} \label{eq8}
+P(M_{i}|C_{1}, C_{2}, \cdots,
+C_{j})=\textcolor{green}{P(M_{i})}\textcolor{orange}{\prod_{j=1}^{N}P(C_{j}|M_{i})}
+\end{equation*}
+Para el calculo de la parte naranja, procedemos a encontrar las
+verosimilitudes.
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Resultado de \prod_{j=1}^{N}P(C_{j}|M_{i})}
+Teniendo en cuenta que $P(C_{j}|M_{i})$ se calcula de la siguiente manera
+\begin{equation*} \label{eq8}
+P(C_{j}|M_{i}) = \frac{\#C_{j}}{\#M_{i}}
+\end{equation*}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Resultado de \prod_{j=1}^{N}P(C_{j}|M_{i})}
+Teniendo en cuenta que $P(C_{j}|M_{i})$ se calcula de la siguiente manera
+\begin{equation*} \label{eq8}
+P(C_{j}|M_{i}) = \frac{\#C_{j}}{\#M_{i}}
+\end{equation*}
+\begin{table}[ht]
+\caption{Verosimilitudes}
+\centering
+\begin{tabular}{c | c c c }
+\hline
+		& \texttt{C1} & \texttt{C2} & \texttt{C3} \\ \hline
+\texttt{M1} 	&     0,894285   &   0,143428    &     0,355428     \\
+\texttt{M2} 	&     0,422727   &   0,972909    &     0,022545     \\
+\texttt{M3} 	&     0,109200   &   0,924800    &     0,005600     \\
+\texttt{M4} 	&     0,018493   &   0,997397    &     0,577260     \\ \hline
+\end{tabular}
+\label{tab:verosimilitudes}
+\end{table}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Soluciones para $P(M_{i}|C_{j})$}
+\begin{equation*}
+P(M_{1}|C_{1}, C_{2}, C_{3}) = 0,008487
+\end{equation*}
+
+\begin{equation*}
+P(M_{2}|C_{1}, C_{2}, C_{3}) = 0,002712
+\end{equation*}
+
+\begin{equation*}
+P(M_{3}|C_{1}, C_{2}, C_{3}) = 0,000075
+\end{equation*}
+
+\begin{equation*}
+P(M_{4}|C_{1}, C_{2}, C_{3})  = 0,004123
+\end{equation*}
+
+Si ahora realizamos:
+
+\begin{equation*}
+\sum_{i=1}^{N=4}P(M_{i}|C_{1, 2, 3}) = 0,015397
+\end{equation*}
+
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Normalizaci\'on}
+Para esto realizamos lo siguiente:
+\begin{equation*}
+\frac{P(M_{i}|C_{1}, C_{2}, C_{3})}{\sum_{i=1}^{N=4}P(M_{i}|C_{1, 2,
+3})}
+\end{equation*}
+
+\begin{center}
+\textsc{--------- Ahora todo normalizado ---------}
+\end{center}
+\begin{equation*}
+P(M_{1}|C_{1}, C_{2}, C_{3}) = 0,551211
+\end{equation*}
+
+\begin{equation*}
+P(M_{2}|C_{1}, C_{2}, C_{3}) = 0,176138
+\end{equation*}
+
+\begin{equation*}
+P(M_{3}|C_{1}, C_{2}, C_{3}) = 0,004871
+\end{equation*}
+
+\begin{equation*}
+P(M_{4}|C_{1}, C_{2}, C_{3}) = 0,267779
+\end{equation*}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}
+\frametitle{Referencias}
+\footnotesize{
+	\begin{thebibliography}{99}
+		% Item 1
+		\bibitem[<++>]{<++>} \textsc{<++>}. \textit{<++>}
+		\newblock <++>
+	\end{thebibliography}
+}
+\end{frame}
+
+%----------------------------------------------------------------------------------------
+
+\end{document}
