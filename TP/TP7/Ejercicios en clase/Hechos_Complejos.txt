@@ -1,0 +1,175 @@
+Reconocimiento de patrones usando hechos complejos
+
+Hasta ahora hemos visto patrones muy simples. Como en otros lenguajes, CLIPS tiene variables para almacenar valores. Por convenio, todo identificador de una variable es precedido por el carácter ?, como por ejemplo ?color, ?nombre, ?valor.
+
+Un primer uso de las variables es ligar una variable a un valor en la parte izquierda de una regla y usar el valor posteriormente en la parte derecha. Por ejemplo:
+
+    CLIPS> (clear)
+    CLIPS> (deftemplate personaje
+       (slot nombre)
+       (slot ojos)
+       (slot pelo))
+    CLIPS>
+    (defrule busca-ojos-azules
+      (personaje (nombre ?nombre) (ojos azules))
+      =>
+      (printout t ?nombre " tiene los ojos azules." crlf))
+    CLIPS>
+    (deffacts gente
+    (personaje (nombre Juan) (ojos azules) (pelo castagno))
+    (personaje (nombre Luis) (ojos verdes) (pelo rojo))
+    (personaje (nombre Pedro) (ojos azules) (pelo rubio))
+    (personaje (nombre Maria) (ojos castagnos) (pelo negro)))
+    CLIPS> (reset)
+    CLIPS> (run)
+    Pedro tiene los ojos azules.
+    Juan tiene los ojos azules. 
+
+Pedro y Juan tienen los ojos azules, por lo que la regla busca-ojos-azules es instanciada dos veces.
+
+El segundo uso de las variables consiste en utilizar la misma variable en múltiples lugares en la parte izquierda de una regla. La primera aparición de la variable liga un valor a dicha variable, y este valor es retenido para el resto de apariciones en la regla. De esta forma podemos definir relaciones entre los patrones de la parte izquierda de una regla, y definir restricciones adicionales.
+
+Siguiendo con el ejemplo anterior, podemos asertar un hecho que indique que color de ojos buscar:
+
+    CLIPS> (undefrule *)
+    CLIPS>(deftemplate busca (slot ojos))
+    CLIPS>
+    (defrule busca-ojos
+      (busca (ojos ?color-ojos))
+      (personaje (nombre ?nombre) (ojos azules))
+      =>
+      (printout t ?nombre " tiene los ojos "
+                  ?color-ojos "."  crlf))
+    CLIPS> (reset)
+    CLIPS> (assert (busca (ojos azules)))
+    <Fact-5>
+    CLIPS> (run)
+    Pedro tiene los ojos azul.
+    Juan tiene los ojos azul. 
+
+CLIPS permite especificar patrones más sofisticados, así como funciones para manipular hechos en las reglas. A continuación algunos ejemplos
+
+ 
+
+Ejemplo 1: Ligar un hecho a una variable
+
+    CLIPS> (clear)
+    CLIPS> (deftemplate persona (slot nombre) (slot direccion))
+    CLIPS>  (deftemplate cambio (slot nombre) (slot direccion))
+    CLIPS> (defrule procesa-informacion-cambios
+            ?h1 <- (cambio (nombre ?nombre) (direccion ?direccion))
+            ?h2 <- (persona (nombre ?nombre))
+           =>
+           (retract ?h1)
+           (modify ?h2 (direccion ?direccion)))
+    CLIPS>
+    (deffacts ejemplo
+      (persona (nombre "Pato Donald") (direccion "Disneylandia"))
+      (cambio (nombre"Pato Donald") (direccion "Port Aventura")))
+    CLIPS> (run)
+    CLIPS> (facts)
+    f-0  (initial-fact)
+    f-3  (persona(nombre "Pato Donald")(direccion "Port Aventura"))
+    For a total of 2 facts. 
+
+Ejemplo 2: Comodines
+
+    CLIPS> (clear)
+    CLIPS>
+    (deftemplate persona (multislot nombre) (slot dni))
+    CLIPS>
+    (deffacts ejemplo
+      (persona (nombre Jose L. Perez) (dni 22454322))
+      (persona (nombre Juan Gomez) (dni 23443325)))
+    CLIPS>
+    (defrule imprime-dni
+       (persona (nombre ? ? ?Apellido) (dni ?dni))
+      =>
+      (printout t ?dni " " ?Apellido crlf))
+    CLIPS> (reset)
+    CLIPS> (run)
+    22454322 Perez 
+
+La regla imprime-dni imprime los dni de las personas que tienen nombre compuesto y apellido, es decir aquellas que tengan exactamente tres elementos en el atributo nombre. Cuandose quiere un comodín que reconozca cero o más valores de un atributo multi-valor, se puede utilizar "$?". Por ejemplo, la siguiente regla imprimirá los dni de todas las personas con apellido, tengan o no nombre, o sea nombre sencillo o compuesto por dos o más.
+
+    CLIPS>
+    (defrule imprime-dni
+       (persona (nombre $?nombre ?Apellido) (dni ?dni))
+      =>
+      (printout t ?dni " " ?nombre " " ?Apellido crlf))
+    CLIPS> (reset)
+    CLIPS> (run)
+    23443325 (Juan) Gomez
+    22454322 (Jose L.) Perez 
+
+Ejemplo 3: Restricciones
+
+Podemos representar patrones que reconozcan hechos que no tengan un determinado valor en un atributo, o que tengan alguno de los valores que se especifican. Los operadores operador ~, | y & cumplen este propósito. Por ejemplo
+
+    (persona (nombre ?nombre) (pelo ~rubio)) 
+
+reconocerá a toda persona con pelo que no sea rubio, y
+
+    (persona (nombre ?nombre) (pelo castagno | pelirrojo)) 
+
+reconocerá a toda persona con el pelo castaño o pelirrojo.
+
+El operador & se utiliza en realidad en combinación con los anteriores para ligar valor a una variable. Por ejemplo
+
+    (defrule pelo-castagno-o-rubio
+      (persona (nombre ?nombre) (pelo  ?color&rubio|castagno))
+       =>
+      (printout t ?nombre " tiene el pelo " ?color crlf)) 
+
+También es posible expresar predicados sobre el valor de un atributo directamente en el patrón. Por ejemplo:
+
+    (defrule mayor-de-edad
+      (persona (nombre $?nombre) (edad ?edad&:(> ?edad 18))
+       =>
+      (printout t ?nombre " es mayor de edad." crlf)) 
+
+Para indicar que el valor de un atributo debe ser igual al resultado de la evaluación de una función se indica mediante el operador =. Por ejemplo, para reconocer las personas con 2 años mas que la mayoría de edad se puede expresar mediante el patrón:
+
+    (persona (edad =(+ 18 2))) 
+
+Función test
+
+Un elemento condicional puede evaluar una expresión, en lugar de representar un patrón que debe ser reconocido. Por ejemplo, para comprobar que la variable ?edad es mayor que 18 se puede representar mediante (test (> ?edad 18)).
+
+Función bind
+
+Si queremos ligar un valor a una variable para utilizarlo en varios sitios sin tener que recalcular el valor podemos hacerlo con la función bind. Por ejemplo, supón que hoy es el cumpleaños de Paco:
+
+(defrule cumpleagnos
+?indice<-(persona (nombre Paco) (edad ?agnos))
+=>
+(bind ?edad (+ 1 ?agnos))
+(printout t “Jose cumple “ ?edad “años “crlf)
+(modify ?indice (edad ?edad))
+)
+Funciones
+
+Aunque cae fuera de los objetivos de este pequeño tutorial, CLIPS es un lenguaje de programación completo, con estructuras de control y extensiones orientadas a objetos. A modo de ejemplo, se incluyen dos funciones que permiten una captura por teclado controlada:
+
+(deffunction ask-question (?question $?allowed-values)
+     (printout t ?question)
+     (bind ?answer (read))
+     (if (lexemep ?answer)
+          then (bind ?answer (lowcase ?answer)))
+     (while (not (member ?answer ?allowed-values)) do
+        (printout t ?question)
+        (bind ?answer (read))
+        (if (lexemep ?answer)
+             then (bind ?answer (lowcase ?answer))))
+     ?answer)    
+
+
+(deffunction yes-or-no-p (?question)
+     (bind ?response (ask-question ?question yes no y n))
+     (if (or (eq ?response yes) (eq ?response y))
+         then TRUE
+          else FALSE))
+
+La forma de usar funciones definidas por usuario no difiere a como se usaría cualquier otra función:
+
+(bind ?response (ask-question ("¿Es un animal de sangre FRIA o CALIENTE?" (fria caliente)))

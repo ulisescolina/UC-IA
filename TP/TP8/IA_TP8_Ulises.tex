@@ -1,0 +1,102 @@
+\documentclass{article}
+\renewcommand\refname{Referencias}
+\renewcommand{\contentsname}{\'Indice de Conten\'ido}
+\usepackage{graphicx}
+\graphicspath{{img/}}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage[spanish]{babel}
+\usepackage[style=ieee]{biblatex}
+\addbibresource{./IA_TP8_Ulises.bib}
+
+\title{\textsc{Inteligencia Artificial y Sistemas Expertos}\\Trabajo Práctico
+Número 8}
+\author{\textsc{Ulises C. Ramirez} [\textit{ulir19@gmail.com}]}
+\date{\today}
+\begin{document}
+\maketitle
+\pagenumbering{gobble}
+\newpage
+
+\section*{Versionado}
+Para el corriente documento se est\'a llevando un versionado a fin de mantener
+un respaldo del trabajo y adem\'as proveer a la c\'atedra o a cualquier
+interesado a la posibilidad de leer el material en la \'ultima versi\'on disponible.\\
+
+\begin{center}
+  \textsc{Repositorio}: \textit{https://github.com/ulisescolina/UC-IA}
+\end{center}
+
+\hfill--\textsc{Ulises}
+\tableofcontents
+\pagenumbering{gobble}
+\newpage
+
+% === Inicio del Cuerpo del Documento === %
+\pagenumbering{arabic}
+\section{Perceptron}
+{\label{sec:perceptron}}
+
+\subsection{Aprendizaje: Supervisado y No-Supervisado}
+La principal caracteristicas entre estos tipos de aprendizaje es la dependencia
+de cada uno para con un agente externo al algoritmo que determina si las
+acciones tomadas por la entidad inteligente son correctas o no, en el
+aprendizaje no-supervisado, no se tiene tal cosa, mientras en el supervisado
+esto es necesario.
+
+\subsection{Elegir dos modelos de red y clasificarlos}
+\subsubsection{Back Propagation Network (BPN)}
+\begin{itemize}
+	\item Tipo de Aprendizaje: Supervisado, con correccion de error.
+	\item Cantidad de Capas: Multicapa.
+	\item Tipo de Conexiones: Feed-Forward.
+\end{itemize}
+
+\subsubsection{Red de Hopfield}
+\begin{itemize}
+	\item Tipo de Aprendizaje: No-Supervisado, Hebbiano.
+	\item Cantidad de Capas: Monocapa.
+	\item Tipo de Conexiones: Conexiones laterales con las neuronas del mismo
+		nivel, no permite conexiones autorecurrentes.
+\end{itemize}
+
+
+\subsection{Ejercicio implementación AND}
+Se opto por realizar la implementación del mismo mediante la codificación del
+algoritmo, puntualmente se realizo la actividad con el lenguaje Python y el
+lenguaje JavaScript, si bien se solicita la implementación de una compuerta AND
+se hace entrega de un perceptron que se puede entrenar para aprender a
+clasificar puntos dentro de un plano. El ejercicio puede ser encontrado en la
+carpeta llamada \texttt{Perceptron}, alli encontrará dos subdirectorios,
+llamados \texttt{Python} y \texttt{JS} en donde se tendrán las respectivas
+implementaciones en cada lenguaje, asegurese de leer el \texttt{README.md} en
+cada uno de estos directorios dado a que alli se encuentran algunas acotaciones
+a tener en cuenta a la hora de hacer funcionar los algoritmos.
+
+\section{Hopfield}
+{\label{sec:hopfield}}
+
+\subsection{Otras aplicaciones de Hopfield}
+Una de las aplicaciones mas basicas de las redes de Hopfield con las que nos
+podemos cruzar varias veces en un dia es la solución de Captchas en diferentes
+paginas Web que evitan que bots sobrecargen, con proposito malicioso, de
+peticiones a una pagina web, ademas su utilizacion es bastante común dentro del
+reconocimiento de caracteres en prácticas de OCR \cite{hopfield1}. además en
+clases se mencionaron otros usos de la red de Hopfield como para casos de
+Optimizacion \cite{ia-hopfield}.
+
+\subsection{Otras redes de aprendizaje no-supervisado}
+Una de las características de las redes con aprendizaje no-supervisado, es su
+capacidad de auto-organizarse, un ejemplo de estas ademas de las Redes de
+Hopfield, son las redes de Mapas Autoorganizadas, tambien conocidas como Redes
+Autooganizadas de Kohonen.
+
+\subsection{Ejercicio de Hopfield}
+El ejercicio para la red de hopfield se puede encontrar en el siguiente enlace:
+\texttt{shorturl.at/hnq89}
+
+% === Bilbiografia === %
+\newpage
+\printbibliography[title={Referencias}]
+\end{document}

@@ -1,0 +1,67 @@
+Ver el planteo y los gráficos en la presentación correspondiente
+
+Práctico 1:
+
+	Analizar el siguiente grafo y determinar las reglas que vinculan los objetos.
+Generar la Base de Conocimiento correspondiente a ese conjunto de reglas.
+		Analizar el comportamiento del sistema experto, al ingresar evidencias verdaderas.
+izar el comportamiento del sistema experto al ingresar evidencias falsas.
+		Solucionar el problema incorporando las reglas que sean necesarias
+
+	Práctico 2:
+	En un Banco se manejan un tipo de cheques denominados “expertos”, debido a que la autorización de su pago se hace con un sistema experto. El sistema experto considera los siguientes criterios para la autorización del pago, que se expresan en estas reglas básicas:
+
+	Regla 1:
+
+	Si  banco_cheque=experto y  emisor=reconocido y saldo=suficiente y receptor=identificado y cheque=completo
+	entonces
+	pago_cheque=permitido
+
+	Regla 2:
+
+	Si  fecha_cheque=correcto y firma_cheque=existente y cantidades=concuerdan
+	entonces
+	cheque=completo
+
+	Regla 3: Si  tipo_cheque=portador
+	entonces
+	receptor=identificado
+
+
+	Regla 4:
+
+	Si  fecha= hasta 90 días antes
+	entonces
+	fecha_cheque=correcta
+
+
+	Regla 5:
+
+	Si  saldo_cuenta>cantidad_cheque
+	entonces
+	saldo=suficiente
+
+
+	Regla 6:
+
+	Si  tipo_cheque=personal  y
+	firma_receptor=comprobada
+	entonces
+	receptor=identificado
+
+	Tareas:
+
+	Analizar los objetos que se presentan en este problema y analizar las reglas que vinculan los objetos.
+
+	Generar la Base de Conocimiento en el SE Reglas
+
+	Analizar el comportamiento del SE con distintas situaciones de evidencias
+
+	Práctico 3
+
+Analizar el diagrama de la diapositiva siguiente  y identificas los objetos que se relacionan
+		Plantear  las reglas que relacionan a los objetosdentificados
+Identificar los distintos componentes de un  Sistema Experto Basado en Reglas en el ejemplo.
+
+Practico 4:
+Investigar y comentar sobre aplicaciones reales y existentes de casos de éxito o no de SEBR

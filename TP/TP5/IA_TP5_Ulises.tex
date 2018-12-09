@@ -1,0 +1,149 @@
+\documentclass{article}
+\renewcommand\refname{Referencias}
+\renewcommand{\contentsname}{\'Indice de Conten\'ido}
+\usepackage{graphicx}
+\graphicspath{{img/}}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage[spanish]{babel}
+\usepackage[style=ieee]{biblatex}
+\addbibresource{./IA_TP5_Ulises.bib}
+
+\title{\textsc{Inteligencia Artificial y Sistemas Expertos}\\Trabajo Práctico
+Número 5}
+\author{\textsc{Ulises C. Ramirez} [\textit{ulir19@gmail.com}]}
+\date{\today}
+\begin{document}
+\maketitle
+\pagenumbering{gobble}
+\newpage
+
+\section*{Versionado}
+Para el corriente documento se est\'a llevando un versionado a fin de mantener
+un respaldo del trabajo y adem\'as proveer a la c\'atedra o a cualquier
+interesado a la posibilidad de leer el material en la \'ultima versi\'on disponible.\\
+
+\begin{center}
+  \textsc{Repositorio}: \textit{https://github.com/ulisescolina/UC-IA}
+\end{center}
+
+\hfill--\textsc{Ulises}
+\tableofcontents
+\pagenumbering{gobble}
+\newpage
+
+% === Inicio del Cuerpo del Documento === %
+\pagenumbering{arabic}
+\textsc{Consigna}: \textit{
+Definir las mejoras que incluyen los modelos Modelo de Síntomas Relevantes
+Independientes y Modelo de Síntomas Relevantes Dependientes. Desarrollar un
+ejemplo de cada uno. Responder ¿Cuál de ellos utiliza menor cantidad de
+parámetros y porqué?}
+\\
+
+Como se ve en \cite{ia-sep}, la base del conocimiento dentro de un Sistema Experto
+Probabilístico (SEP de ahora en más), consiste en un conjunto de variables y una o
+varias funciones de probabilidad conjunta definida sobre ese conjunto de variables.
+
+Se busca especificar directamente la funcion de probabilidad asignando un valor
+o un parametro a cada combinacion de las variables mencionadas anteriormente.
+
+Esto comienza a ser un inconveniente al tener un sistema que necesite muchas
+variables para su modelización, para visualizar esto podemos tener un ejemplo
+con variables binarias, es decir las diferentes variables que se tengan solo
+pueden tomar 2 valores, para este escenario hipotético que se acaba de armar,
+la funcion de probabilidad conjunta que se menciono tendra $2^{n}$ parámetros,
+siendo $n$ la cantidad de variables binarias en el problema. Para un $n$
+suficientemente grande se empiezan a ver los inconvenientes a afrontar.
+
+En SEP, los problemas y las diferentes variables que lo modelen, pueden o no
+estar relacionadas, es decir, puede o no existir dependencia entre ellas, este
+factor nos permite reducir la complejidad de una estructura para modelar un
+problema, que si bien es más simple en términos de interconexión de variables,
+aún puede ser fiel al escenario.
+
+De este razonamiento salen los Modelos de Sintomas Dependientes y los Modelos
+de Sintomas Independientes.
+
+\section{MSD}
+El problema supone que existe dependencia entre los sintomas de las diferentes
+enfermedades, pero que cada enfermedad es independiente de otra. Cada sintoma
+puede relacionarse, no solamente con otros sintomas, sino que también con otras
+enfermedades.
+
+Para este modelo los parametros necesarios para la base de conocimiento serán:
+\begin{itemize}
+	\item Probabilidades marginales, para todos los valores posibles para $E$
+		(enfermedades).
+	\item Verosimilitudes de los sintomas, para cada enfermedad $P(s_{1}, s_{2},
+		\hdots , s_{n} | e_{i})$, para todas las combinaciones posibles de síntomas y
+		enfermedades.
+\end{itemize}
+
+Entonces, para $m$ enfermedades y $n$ sintomas binarios MSD requiere de un
+total de $m \cdot 2^{n}-1$.
+
+para valores de $m=2$ y $n=3$ se tendría:
+
+\begin{equation}
+	\begin{split}
+		m \cdot 2^{n}-1 &= 2 \cdot 2^{3} - 1 \\
+		&= 15
+	\end{split}
+\end{equation}
+
+Ahora si se aumentan los valores para $m=100$ y $n=200$ se tiene que:
+\begin{equation} \label{eq2}
+	\begin{split}
+		m \cdot 2^{n}-1 &= 100 \cdot 2^{200} - 1 \\
+		&= 10^{62}
+	\end{split}
+\end{equation}
+
+Esto hace al principal problema del MSD, el requerimiento de manejo de un
+numero de parámetros muy alto.
+
+\section{MSI}
+Lo mencionado anteriormente, resulta menester la simplificación del modelo para
+poder ser capaces de trabajar con un sistema que tenga una gran cantidad de
+variables. Una de las simplificaciones a llevar a cabo es suponer que los
+sintomas para una enfermedad dada son independientes entre si, esto da origen
+al MSI.
+
+Los parametros necesarios para la base de conocimiento del MSI son los
+siguientes:
+\begin{itemize}
+	\item Probabilidades marginales, para todos los valores de $E$.
+	\item Probabilidades condicionales $P(s_{j} | e_{i})$ para todos los sintomas
+		y la enfermedad.
+\end{itemize}
+
+Se nota la reducción del numero de parametros necesarios para este acercamiento
+del problema. si se tiene que la cantidad de enfermedades es $m$ y la cantidad
+de síntomas binarios $n$, se requerirían de $m\cdot(n+1)-1$ parámetros.
+
+para valores de $m=2$ y $n=3$ se tendría:
+
+\begin{equation}
+	\begin{split}
+		m\cdot(n+1)-1 &= 2\cdot(3+1)-1 \\
+		&= 7
+	\end{split}
+\end{equation}
+
+Ahora si se aumentan los valores para $m=100$ y $n=200$ se tiene que:
+\begin{equation}
+	\begin{split}
+		m\cdot(n+1)-1 &= 100\cdot(200+1)-1 \\
+		&= 20099
+	\end{split}
+\end{equation}
+
+Lo cual muestra una cantidad mucho menor que la obtenida en el Desarrollo
+\ref{eq2}.
+% === Bilbiografia === %
+\newpage
+\printbibliography[title={Referencias}]
+\end{document}

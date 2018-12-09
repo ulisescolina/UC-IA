@@ -1,0 +1,268 @@
+\documentclass{article}
+\renewcommand\refname{Referencias}
+\renewcommand{\contentsname}{\'Indice de Conten\'ido}
+\usepackage{graphicx}
+\graphicspath{{img/}}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage[spanish]{babel}
+\usepackage[style=ieee]{biblatex}
+\addbibresource{./IA_TP6_Ulises.bib}
+
+\title{\textsc{Inteligencia Artificial y Sistemas Expertos}\\Trabajo Práctico
+Número 6}
+\author{\textsc{Ulises C. Ramirez} [\textit{ulir19@gmail.com}]}
+\date{\today}
+\begin{document}
+\maketitle
+\pagenumbering{gobble}
+\newpage
+
+\section*{Versionado}
+Para el corriente documento se est\'a llevando un versionado a fin de mantener
+un respaldo del trabajo y adem\'as proveer a la c\'atedra o a cualquier
+interesado a la posibilidad de leer el material en la \'ultima versi\'on disponible.\\
+
+\begin{center}
+  \textsc{Repositorio}: \textit{https://github.com/ulisescolina/UC-IA}
+\end{center}
+
+\hfill--\textsc{Ulises}
+\tableofcontents
+\pagenumbering{gobble}
+\newpage
+
+% === Inicio del Cuerpo del Documento === %
+\pagenumbering{arabic}
+\section{Practico 1}\label{sec:practico1}
+\textsc{Consigna}: \textit{Analizar el grafo (Diapositiva, Clase 8, SE Basados
+en Reglas, pp 112) y determinar las reglas que lo vinculan. Generar la Base de
+Conocimiento correspondiente a ese conjunto de reglas. Analizar el
+comportamiento del sistema experto a ingresar evidencias verdaderas. Analizar
+el comportamiento del sistema al ingresar evidencias falsas. Solucionar el
+problema incorporando reglas que sean necesarias}
+
+\subsection{Determinacion de reglas que vinculan al grafo}
+\label{sub:reglas}
+El grafo presentado en la diapositiva en cuestion presenta las reglas C, G, M,
+H, I, J, vinculadas mediante encadenamiento. A continuación se determinan las
+mismas:
+
+\begin{itemize}
+	\item \textit{Regla C}: \textbf{SI} A y B \textbf{ENTONCES} C.
+	\item \textit{Regla G}: \textbf{SI} D y E y F \textbf{ENTONCES} G.
+	\item \textit{Regla M}: \textbf{SI} K y L \textbf{ENTONCES} M.
+	\item \textit{Regla H}: \textbf{SI} C y G \textbf{ENTONCES} H.
+	\item \textit{Regla I}: \textbf{SI} G y M \textbf{ENTONCES} I.
+	\item \textit{Regla J}: \textbf{SI} H y I \textbf{ENTONCES} J.
+\end{itemize}
+
+\subsection{Análisis de comportamiento al ingresar evidencias verdaderas}
+Para el ejemplo vamos a hacer que:
+
+\begin{itemize}
+	\item \textit{A}: Verdadero.
+	\item \textit{G}: Verdadero.
+	\item \textit{I}: Verdadero.
+\end{itemize}
+
+Para el analisis de comportamiento vamos a utilizar algunas reglas de
+inferencia vistas en clases, especificamente estaremos haciendo uso de Modus
+Ponens y Modus Tollens.
+
+\begin{itemize}
+	\item Para la primer regla $C$, se tiene que $A$ es verdadero, pero como esta
+		regla, no depende de ninguna otra y no tenemos restriccion sobre $C$, la
+		$B$ puede tomar cualquier valor, dado a que lo que se tenga en $C$ no esta
+		sujeto al problema.
+	\item Para la regla $G$, se tiene una situacion diferente, tenemos que esta,
+		según el planteo hipotético del que estamos hablando, es verdadera, lo que
+		significa que para que esto se pueda alcanzar las reglas $D$, $E$ y $F$
+		deben ser verdaderas tambien, deducido mediante el modus tollens.
+	\item Para la regla $M$, acá tenemos otra situacion, si bien, no tenemos
+		restriccion para la regla actual, lo cual significa que, $K$ y $L$ pueden
+		tomar cualquier valor, se debe mirar un poco mas adelante, a la regla $I$,
+		se tiene la restriccion de que la misma es verdadera, para que esto se
+		pueda cumplir y el modelo sea coherente la regla actual $M$ debe ser
+		verdadera, y para que se cumpla esto teniendo en cuenta las reglas
+		presentadas en la Sección \ref{sub:reglas}, se tiene que tener a $K$ y $L$
+		como verdaderas.
+	\item Para la regla $H$, no se tiene ninguna restriccion, ni tampoco se tiene
+		restricciones con respecto a las reglas que dependen de esta, por tanto
+		puede tomar valor verdadero como tambien falso.
+	\item Para la regla $I$, nuevamente tenemos una restriccion que obliga a la
+		misma ser verdadera, lo cual obliga a los antecedentes a ser verdaderos.
+		uno de ellos $G$, por medio de otra restricción ya es verdadera lo cual
+		deja a la regla $M$, la cual ya se tuvo en cuenta y se obliga a que la
+		misma sea verdadera.
+	\item Para la regla $J$, no se tiene ninguna restricción pero se tiene que la
+		regla $I$ es verdadera y que la regla $H$ puede tomar cualquiera de los dos
+		valores, esto hace que la regla en cuestión tambien pueda tomar cualquier
+		valor dado a que va a combinar la $I$ que es verdadera, con la $H$ que
+		puede o no ser verdadera.
+\end{itemize}
+
+\section{Práctico 2}
+\textsc{Consigna}: \textit{Analizar los objetos que se presentan en el problema
+y analizar las reglas que vinculan los objetos. Generar la Base de Conocimiento
+en el SE Reglas. Analizar el comportamiento del SE con distintas situaciones de
+evidencias.}
+\\
+
+\section{Base del conocimiento del SEBR}
+\textbf{R1}: \\
+	\textbf{SI} banco\_cheque = experto \textit{y} \\
+	|    emisor = reconocido \textit{y} \\
+	|    saldo = suficiente \textit{y} \\
+	|    receptor = identificado \textit{y} \\
+	|    cheque = completo \\
+	\textbf{ENTONCES} pago\_cheque=permitido \\
+
+\textbf{R2}:\\
+	\textbf{SI}
+	fecha\_cheque = correcto \textit{y}\\
+	|    firma\_cheque = existente \textit{y}\\
+	|    cantidades = concuerdan\\
+	\textbf{ENTONCES}	cheque = completo\\
+
+\textbf{R3}:\\
+	\textbf{SI}
+	tipo\_cheque = portador\\
+	\textbf{ENTONCES}	receptor = identificado\\
+
+\textbf{R4}:\\
+	\textbf{SI}
+	fecha = hasta 90 dias antes\\
+	\textbf{ENTONCES}	fecha\_cheque = correcta\\
+
+\textbf{R5}:\\
+	\textbf{SI}
+	saldo\_cuenta \textgreater  cantidad\_cheque\\
+	\textbf{ENTONCES}	saldo = suficiente\\
+
+\textbf{R6}:\\
+	\textbf{SI}
+	tipo\_cheque = personal \textit{y}\\
+	|    firma\_receptor = comprobada \\
+	\textbf{ENTONCES}	receptor = identificado\\
+
+
+\subsection{Analizar el comportamiento del SE con distintas situaciones de
+evidencias}
+Para el ejemplo podemos tomar las siguientes evidencias:
+\begin{itemize}
+	\item \texttt{saldo\_cuenta = cantidad\_cheque}
+	\item \texttt{firma\_receptor = no comprobada}
+\end{itemize}
+
+Esto haría que las reglas $5$ y la regla $6$ no satisfagan lo solicitado por la
+$Regla 1$ dado a que sucede lo siguiente:
+\\
+
+\textbf{R5}:\\
+	\textbf{SI}
+	saldo\_cuenta =  cantidad\_cheque \texttt{según lo dijimos en una
+	evidencia tomada} \\
+	\textbf{ENTONCES}	saldo = insuficiente\\
+
+dado a que no se cumpliria que \texttt{saldo\_cuenta \textgreater
+cantidad\_cheque}, porque los montos son iguales, esta regla haría que el saldo
+sea insuficiente.\\
+
+\textbf{R6}:\\
+	\textbf{SI}
+	tipo\_cheque = personal \textit{y}\\
+	firma\_receptor = no comprobada \texttt{según lo dijimos en una
+	evidencia tomada}\\
+	\textbf{ENTONCES}	receptor = no identificado\\
+
+Nuevamente no se cumple lo que solicita la regla 6 \texttt{firma\_receptor = comprobada}
+\\
+
+\textbf{R1}: lo podemos evaluar con las evidencias necesarias e incluimos las
+hipotéticas que creamos al inicio:\\
+	\texttt{banco\_cheque = experto}\\
+	\texttt{emisor = reconocido}\\
+	\texttt{saldo = insuficiente}\\
+	\texttt{receptor = no identificado}\\
+	\texttt{cheque = completo} \\
+
+Lo cual haría que \texttt{pago\_cheque = no permitido}.
+
+\section{Práctico 3}
+\textsc{Consigna}: \textit{Analizar el diagrama de la diapositiva siguiente
+(Diapositiva , Clase 8, SEBR, pp 129). Plantear las reglas que relacionan a los
+objetos identificados.}
+
+\subsection{Análisis del diagrama}
+Los objetos que se relacionan son Personas los atributos de las mismas que son
+de interes para el diagrama mencionado son el Sexo, la Ocupacion o no en la
+Política y además la Nacionalidad.
+
+\subsubsection*{Reglas que relacionan a los objetos}
+\textsc{Regla 1}: \\
+\textbf{SI} Persona.Argentino = verdadero y \\
+|    Persona.Mujer = falso y \\
+|    Persona.Politico = falso \\
+\textbf{Entonces} Persona = Juan\\
+
+\textsc{Regla 2}: \\
+\textbf{SI} Persona.Argentino = falso y \\
+|    Persona.Mujer = verdadero y \\
+|    Persona.Politico = falso \\
+\textbf{Entonces} Persona = Carmen\\
+
+\textsc{Regla 3}: \\
+\textbf{SI} Persona.Argentino = falso y \\
+|    Persona.Mujer = falso y \\
+|    Persona.Politico = verdadero \\
+\textbf{Entonces} Persona = Aznar\\
+
+\textsc{Regla 4}: \\
+\textbf{SI} Persona.Argentino = verdadero y \\
+|    Persona.Mujer = falso y \\
+|    Persona.Politico = verdadero \\
+\textbf{Entonces} Persona = Menem\\
+
+\textsc{Regla 5}: \\
+\textbf{SI} Persona.Argentino = falso y \\
+|    Persona.Mujer = verdadero y \\
+|    Persona.Politico = verdadero \\
+\textbf{Entonces} Persona = Tactcher\\
+
+\textsc{Regla 6}: \\
+\textbf{SI} Persona.Argentino = verdadero y \\
+|    Persona.Mujer = verdadero y \\
+|    Persona.Politico = falso \\
+\textbf{Entonces} Persona = Blanca\\
+
+\textsc{Regla 7}: \\
+\textbf{SI} Persona.Argentino = verdadero y \\
+|    Persona.Mujer = verdadero y \\
+|    Persona.Politico = verdadero \\
+\textbf{Entonces} Persona = Pando\\
+
+\section{Practico 4}
+\textsc{Consigna}: \textit{investigar y comentar sobre aplicaciones reales y
+existentes de casos de exito o no de SEBR.}
+
+En uno de los articulos que se encontraron durante la investigación se
+encontraron los resultados obtenidos en el desarrollo de un sistema de
+diagnostico médico aplicado a la Meningitis Bacterial mediante el uso de
+sistemas basados en reglas y sistemas basados en razonamiento
+\cite{cabrera2010}, este se tomó por la particularidad de que es algo bastante
+afin a lo que se fué viendo en clases con los diferentes ejemplos de la
+aplicacion de SEBR en el area de la medicina.
+
+Siguiendo el mismo criterio que el estudio mencionado anteriormente se tiene el
+trabajo que mediante el uso de SEBR para la generacion de alertas automáticas
+junto con las instrucciones basado en la tele-monitorización, el proposito fue
+el de desarrollar un sistema experto basado en reglas para un sistema movil
+para el monitoreo de fallas de corazon \cite{seto2012}
+
+
+% === Bilbiografia === %
+\newpage
+\printbibliography[title={Referencias}]
+\end{document}

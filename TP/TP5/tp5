@@ -1,0 +1,22 @@
+
+Punto 1:
+
+Del practico anterior el punto donde debían proponer su propio escenario
+
+Crear su propia división de un espacio de estado, con la descripción de algún fenómeno similar como el caso de los síntomas y las enfermedades y aplicar teorema de Bayes.
+
+   Ejemplo 1: Espacio muestral personas que van al casino, síntomas los grupos de personas que juegan en tres juegos diferentes como ser: ruleta, tragamonedas y cartas. Definir un grupo que pierde dinero y un grupo que gana dinero
+
+ Ejemplo 2: Espacio muestral de los ingresantes a una carrera universitaria. Partición del espacio muestral de alumnos que tuvieron promedio menor a 6 en la secundaria, ingresantes cuyo ingreso promedio mensual es menor a 800 pesos y un tercer síntoma dado por los reincidentes personas que abandonaron y retomaron los estudios mas de dos veces.
+
+Aplicar el calculo de las Probabilidades marginales o a priori, las verosimilitudes y las probabilidades a posteriori aplicando el Modelo de Sintomas Independiente
+
+ Punto 2:
+
+Investigar y Responder
+
+Definir las mejoras que incluyen los modelos Modelo de Síntomas Relevantes Independientes y Modelo de Síntomas Relevantes Dependientes. Desarrollar un ejemplo de cada uno.
+
+ 	• Responder ¿Cuál de ellos utiliza menor cantidad de parámetros y porqué?
+
+
